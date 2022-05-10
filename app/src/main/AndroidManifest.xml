@@ -2,13 +2,39 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.bmi">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.BMI">
+        android:theme="@style/Theme.BMI"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".daysChallenge"
+            android:exported="false" />
+        <activity
+            android:name=".grillHealthy"
+            android:exported="false" />
+        <activity
+            android:name=".rehydrationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".newNutrion"
+            android:exported="false" />
+        <activity
+            android:name=".viewPDF"
+            android:exported="false" />
+        <activity
+            android:name=".viewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PDF"
+            android:exported="false" />
         <activity
             android:name=".calculateBMI"
             android:exported="false" />

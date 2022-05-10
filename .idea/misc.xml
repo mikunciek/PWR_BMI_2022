@@ -4,9 +4,17 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Mo/AndroidStudioProjects/BMI/app/src/main/res/layout/activity_main.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/Mo/AndroidStudioProjects/PWR_BMI_2022/app/src/main/res/layout-land/activity_view_pdf.xml" value="0.2873873873873874" />
         <entry key="..\:/Users/Mo/AndroidStudioProjects/PWR_BMI_2022/app/src/main/res/layout/activity_bmi_value.xml" value="0.25" />
         <entry key="..\:/Users/Mo/AndroidStudioProjects/PWR_BMI_2022/app/src/main/res/layout/activity_calculate_bmi.xml" value="0.16875" />
+        <entry key="..\:/Users/Mo/AndroidStudioProjects/PWR_BMI_2022/app/src/main/res/layout/activity_days_challenge.xml" value="0.1296875" />
+        <entry key="..\:/Users/Mo/AndroidStudioProjects/PWR_BMI_2022/app/src/main/res/layout/activity_grill_healthy.xml" value="0.1296875" />
         <entry key="..\:/Users/Mo/AndroidStudioProjects/PWR_BMI_2022/app/src/main/res/layout/activity_main.xml" value="0.184375" />
+        <entry key="..\:/Users/Mo/AndroidStudioProjects/PWR_BMI_2022/app/src/main/res/layout/activity_new_nutrion.xml" value="0.1" />
+        <entry key="..\:/Users/Mo/AndroidStudioProjects/PWR_BMI_2022/app/src/main/res/layout/activity_pdf.xml" value="0.1" />
+        <entry key="..\:/Users/Mo/AndroidStudioProjects/PWR_BMI_2022/app/src/main/res/layout/activity_rehydration.xml" value="0.1296875" />
+        <entry key="..\:/Users/Mo/AndroidStudioProjects/PWR_BMI_2022/app/src/main/res/layout/activity_view.xml" value="0.1" />
+        <entry key="..\:/Users/Mo/AndroidStudioProjects/PWR_BMI_2022/app/src/main/res/layout/activity_view_pdf.xml" value="0.22" />
       </map>
     </option>
   </component>
