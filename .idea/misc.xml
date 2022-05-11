@@ -10,11 +10,13 @@
         <entry key="..\:/Users/Mo/AndroidStudioProjects/PWR_BMI_2022/app/src/main/res/layout/activity_days_challenge.xml" value="0.1296875" />
         <entry key="..\:/Users/Mo/AndroidStudioProjects/PWR_BMI_2022/app/src/main/res/layout/activity_grill_healthy.xml" value="0.1296875" />
         <entry key="..\:/Users/Mo/AndroidStudioProjects/PWR_BMI_2022/app/src/main/res/layout/activity_main.xml" value="0.184375" />
-        <entry key="..\:/Users/Mo/AndroidStudioProjects/PWR_BMI_2022/app/src/main/res/layout/activity_new_nutrion.xml" value="0.1" />
+        <entry key="..\:/Users/Mo/AndroidStudioProjects/PWR_BMI_2022/app/src/main/res/layout/activity_new_nutrion.xml" value="0.12" />
         <entry key="..\:/Users/Mo/AndroidStudioProjects/PWR_BMI_2022/app/src/main/res/layout/activity_pdf.xml" value="0.1" />
         <entry key="..\:/Users/Mo/AndroidStudioProjects/PWR_BMI_2022/app/src/main/res/layout/activity_rehydration.xml" value="0.1296875" />
         <entry key="..\:/Users/Mo/AndroidStudioProjects/PWR_BMI_2022/app/src/main/res/layout/activity_view.xml" value="0.1" />
         <entry key="..\:/Users/Mo/AndroidStudioProjects/PWR_BMI_2022/app/src/main/res/layout/activity_view_pdf.xml" value="0.22" />
+        <entry key="..\:/Users/Mo/AndroidStudioProjects/PWR_BMI_2022/app/src/main/res/layout/activity_web_view.xml" value="0.17239583333333333" />
+        <entry key="..\:/Users/Mo/AndroidStudioProjects/PWR_BMI_2022/app/src/main/res/layout/activity_web_view_pdf_fragment.xml" value="0.17239583333333333" />
       </map>
     </option>
   </component>

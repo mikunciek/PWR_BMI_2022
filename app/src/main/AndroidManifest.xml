@@ -15,6 +15,12 @@
         android:theme="@style/Theme.BMI"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".WebViewPdfFragment"
+            android:exported="false" />
+        <activity
+            android:name=".WebView"
+            android:exported="false" />
+        <activity
             android:name=".daysChallenge"
             android:exported="false" />
         <activity

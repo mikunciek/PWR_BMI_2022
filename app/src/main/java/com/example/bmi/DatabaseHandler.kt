@@ -32,8 +32,8 @@ class DatabaseHandler(context: Context?) :
 
         values.put(KEY_WEIGHT, bmi.weight)
         values.put(KEY_HEIGHT, bmi.height)
-        values.put(KEY_VALUE_BMI, bmi.valueBMI)
-        values.put(KEY_DESCRIPTION_BMI, bmi.descriptionBMI)
+        //values.put(KEY_VALUE_BMI, bmi.valueBMI)
+        //values.put(KEY_DESCRIPTION_BMI, bmi.descriptionBMI)
 
 
         // Inserting Row
@@ -69,8 +69,8 @@ class DatabaseHandler(context: Context?) :
 
             cursor.getDouble(0),
             cursor.getDouble(1),
-            cursor.getDouble(2),
-            cursor.getString(3)
+            //cursor.getDouble(2),
+            //cursor.getString(3)
         )
 
 

@@ -1,27 +1,56 @@
 package com.example.bmi
 
-import androidx.appcompat.app.AppCompatActivity
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.webkit.WebSettings
+import android.webkit.WebView
+import android.webkit.WebViewClient
+import androidx.appcompat.app.AppCompatActivity
 
 class newNutrion : AppCompatActivity() {
+
+
+    @SuppressLint("SetJavaScriptEnabled")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_new_nutrion)
-
 /*
-pdfView.fromAsset("Talerz Zdrowego Żywienia.pdf")
-    .enableSwipe()
-    .swipeHorizontal(true)
-    .load()
+        val webView: WebView = findViewById(R.id.panelN)
 
+        webView.webViewClient = WebViewClient()
 
-        /* <com.github.barteksc.pdfviewer.PDFView
-android:id="@+id/pdfView"
-android:layout_width="match_parent"
-android:layout_height="match_parent" /> */
+        webView.settings.javaScriptEnabled = true
+        webView.settings.setSupportZoom(true)
 
-    https://www.youtube.com/watch?v=niA5PAWn8kc
+        webView.isVerticalScrollBarEnabled = true; //przewijanie w pionie
 
+        val url = "https://github.com/mikunciek/PWR_BMI_2022/raw/master/pdf/Dieta%20dobra%20na%20pamie%C4%87.pdf"
+        webView.loadUrl("https://docs.google.com/gview?embedded=true&url=$url")
+
+=
+        //przekopiowane
+        val webSettings: WebSettings = webView.settings
+        webSettings.javaScriptEnabled = true
+        webSettings.pluginState = WebSettings.PluginState.ON
+        webSettings.setGeolocationEnabled(true)
+        webSettings.javaScriptCanOpenWindowsAutomatically = true
+        webSettings.builtInZoomControls = true
+        webSettings.saveFormData = true
+        webSettings.setAppCacheEnabled(true)
+        webSettings.databaseEnabled = true
+        webSettings.domStorageEnabled = true
+        webSettings.loadsImagesAutomatically = true
+        webSettings.allowFileAccess = true
+        webSettings.allowFileAccessFromFileURLs = true
+        webSettings.allowUniversalAccessFromFileURLs = true
+        webSettings.useWideViewPort = true
+        webSettings.builtInZoomControls = false
+        webSettings.setGeolocationDatabasePath(filesDir.path)
+        webSettings.allowFileAccess = true
+        webSettings.allowUniversalAccessFromFileURLs = true
+    }
 */
+
+
+    }
 }
-}
+
