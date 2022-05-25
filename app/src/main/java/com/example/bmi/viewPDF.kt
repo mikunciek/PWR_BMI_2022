@@ -11,6 +11,7 @@ class viewPDF : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_pdf)
 
+
         val nutrion: Button = findViewById(R.id.nutrion)
         nutrion.setOnClickListener {
             this.startActivity(Intent(this, newNutrion::class.java))
@@ -32,6 +33,12 @@ class viewPDF : AppCompatActivity() {
         val challenge: Button = findViewById(R.id.challenge)
         challenge.setOnClickListener {
             this.startActivity(Intent(this, daysChallenge::class.java))
+
+        }
+
+        val memory: Button = findViewById(R.id.memory)
+        memory.setOnClickListener {
+            this.startActivity(Intent(this, memoryGood::class.java))
 
         }
     }

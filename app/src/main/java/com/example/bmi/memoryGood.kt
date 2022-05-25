@@ -5,12 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.webkit.WebView
 
-class rehydrationActivity : AppCompatActivity() {
+class memoryGood : AppCompatActivity() {
     @SuppressLint("SetJavaScriptEnabled")
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_rehydration)
+        setContentView(R.layout.activity_memory_good)
 
         val webView: WebView = findViewById(R.id.panel)
 
@@ -22,8 +21,12 @@ class rehydrationActivity : AppCompatActivity() {
         webView.canGoForward()
         webView.requestFocus()
         val url =
-            "https://github.com/mikunciek/PWR_BMI_2022/raw/master/pdf/Jak%20si%C4%99%20nawadnia%C4%87%20podczas%20aktywno%C5%9Bci%20fizycznej.pdf"
+            "https://github.com/mikunciek/PWR_BMI_2022/raw/master/pdf/Dieta%20dobra%20na%20pamie%C4%87.pdf"
         webView.loadUrl("https://docs.google.com/gview?embedded=true&url=$url")
-}
 
+
+
+
+
+    }
 }

@@ -15,10 +15,16 @@
         android:theme="@style/Theme.BMI"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".WebViewPdfFragment"
+            android:name=".previousTable"
             android:exported="false" />
         <activity
-            android:name=".WebView"
+            android:name=".previousResult"
+            android:exported="false" />
+        <activity
+            android:name=".quizLife"
+            android:exported="false" />
+        <activity
+            android:name=".memoryGood"
             android:exported="false" />
         <activity
             android:name=".daysChallenge"
@@ -34,12 +40,6 @@
             android:exported="false" />
         <activity
             android:name=".viewPDF"
-            android:exported="false" />
-        <activity
-            android:name=".viewActivity"
-            android:exported="false" />
-        <activity
-            android:name=".PDF"
             android:exported="false" />
         <activity
             android:name=".calculateBMI"

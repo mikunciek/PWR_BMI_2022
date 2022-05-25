@@ -45,7 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:ems="10"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.38"
@@ -59,7 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:ems="10"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.489"
@@ -98,34 +98,30 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Zapisz dane"
-        app:layout_constraintBottom_toTopOf="@+id/valueBMI"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.57"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editheightNumber"
-        app:layout_constraintVertical_bias="0.164" />
+        app:layout_constraintTop_toBottomOf="@+id/editheightNumber" />
 
     <TextView
-        android:id="@+id/showBMI"
+        android:id="@+id/bmiValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Twoje BMI wynosi: "
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/valueBMI"
-        app:layout_constraintHorizontal_bias="0.523"
+        android:layout_marginTop="76dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/save"
-        app:layout_constraintVertical_bias="0.233" />
+        app:layout_constraintTop_toBottomOf="@+id/save" />
 
-    <EditText
-        android:id="@+id/valueBMI"
+    <TextView
+        android:id="@+id/viewInfoBMI"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="76dp"
-        android:layout_marginBottom="168dp"
-        android:ems="10"
-        android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bmiValue" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
