@@ -42,7 +42,6 @@ class databaseHandler(context: Context?) :
     }
 
     fun clear() {
-
         val db = this.writableDatabase
         db.execSQL("DROP TABLE IF EXISTS $TABLE_BMI_STATS ")
         // Create tables again
@@ -58,10 +57,8 @@ class databaseHandler(context: Context?) :
         values.put(KEY_WEIGHT, bmi.weight)
         values.put(KEY_HEIGHT, bmi.height)
 
-
         // Inserting Row - utworzenie nowego wiersza w tabeli
         db.insert(TABLE_BMI_STATS, null, values)
-        //2nd argument is String containing nullColumnHack
         db.close() // Closing database connection
     }
 
@@ -70,7 +67,6 @@ class databaseHandler(context: Context?) :
     fun allData(): List<BMI> { //tworzy listę obiektów bmi
 
         val date: MutableList<BMI> = ArrayList()
-
         // select - wybiera wszystko co jest w bazie wg określonych kryteriów
         //* - oznacza dowolny ciąg znaków, tutaj wyciąga wszystkie kolumny
         val selectQuery = "SELECT * FROM $TABLE_BMI_STATS"
@@ -87,8 +83,6 @@ class databaseHandler(context: Context?) :
                     cursor.getString(cursor.getColumnIndex(KEY_DATE)),
                     cursor.getInt(cursor.getColumnIndex("id"))
                 )
-
-
 
                 date.add(bmi) //dodanie do listy
             } while (cursor.moveToNext()) //pętla się kończy w momencie gdy nie ma kolejnego

@@ -1,9 +1,5 @@
 package com.example.bmi
 
-import android.widget.TextView
-import java.time.LocalDate
-import java.util.*
-
 class BMI(
     val weight: Double,
     val height: Double,
@@ -17,8 +13,6 @@ class BMI(
         val bmi = weight / ((height / 100.00) * (height / 100.00))
         return bmi
     }
-
-
 
     override fun toString (): String {
 
@@ -34,8 +28,4 @@ class BMI(
         }
         throw Exception("Za duża wartość BMI")
     }
-
-
-
-
 }

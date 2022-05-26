@@ -16,7 +16,6 @@ class daysChallenge : AppCompatActivity() {
 
         webView.settings.javaScriptEnabled = true
         webView.settings.setSupportZoom(true)
-
         webView.isVerticalScrollBarEnabled = true; //przewijanie w pionie
         webView.canGoBack()
         webView.canGoForward()

@@ -17,15 +17,15 @@
 
     // Add Table rows here
 
-    <TextView
-        android:id="@+id/layout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Poprzednie wyniki BMI: "
-        android:textSize="20dp"
-        android:textStyle="bold">
+        <TextView
+            android:id="@+id/layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Poprzednie wyniki BMI: "
+            android:textSize="20dp"
+            android:textStyle="bold">
 
-    </TextView>
+        </TextView>
 
 
     <TableRow

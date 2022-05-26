@@ -15,8 +15,6 @@ class previousTable : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_previous_table)
 
-
-
         val db = databaseHandler(this)
         val list = db.allData()
 
