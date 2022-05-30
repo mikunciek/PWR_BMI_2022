@@ -10,7 +10,7 @@
         android:id="@+id/ok"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="180dp"
+        android:layout_marginBottom="136dp"
         android:text="Następne pytanie"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,8 +30,8 @@
         android:id="@+id/answersGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/ok"
+        android:layout_marginBottom="84dp"
+        app:layout_constraintBottom_toTopOf="@+id/showPoint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent">
@@ -44,9 +44,8 @@
 
         <RadioButton
             android:id="@+id/bButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
         <RadioButton
             android:id="@+id/cButton"
@@ -54,5 +53,15 @@
             android:layout_height="wrap_content" />
 
     </RadioGroup>
+
+    <TextView
+        android:id="@+id/showPoint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/ok"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
