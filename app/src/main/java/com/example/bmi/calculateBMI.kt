@@ -50,7 +50,7 @@ class calculateBMI : AppCompatActivity() {
 
 
         backViewResolut.setOnClickListener {
-            this.startActivity(Intent(this, libraryPDF::class.java))
+            this.startActivity(Intent(this, previousTable::class.java))
         }
 
 

@@ -187,14 +187,5 @@ class quizLife : AppCompatActivity() {
 
         return answers
     }
-
-   fun sumPoint (point: String): String {
-
-        val point = this.questions.points.toString()
-        return point
-    }
-
-
-
 }
 

@@ -29,5 +29,4 @@ class showResultQuiz : AppCompatActivity() {
             this.startActivity(Intent(this, libraryPDF::class.java))
         }
     }
-
 }
