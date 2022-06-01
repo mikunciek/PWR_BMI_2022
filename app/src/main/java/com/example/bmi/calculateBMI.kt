@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_calculate_bmi.*
 
 
 class calculateBMI : AppCompatActivity() {
@@ -15,8 +16,8 @@ class calculateBMI : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_calculate_bmi)
 
-        val saveDate: Button = findViewById(R.id.save)
-        saveDate.setOnClickListener {
+
+        save.setOnClickListener {
 
             //data
             val date = findViewById<TextView>(R.id.editDate)
@@ -41,14 +42,14 @@ class calculateBMI : AppCompatActivity() {
         }
 
         //akcje powrotu
-        val back: Button = findViewById(R.id.backMainMenu)
-        back.setOnClickListener {
+
+        backMainMenu.setOnClickListener {
             this.startActivity(Intent(this, MainActivity::class.java))
         }
 
 
-        val library: Button = findViewById(R.id.backViewResolut)
-        library.setOnClickListener {
+
+        backViewResolut.setOnClickListener {
             this.startActivity(Intent(this, libraryPDF::class.java))
         }
 

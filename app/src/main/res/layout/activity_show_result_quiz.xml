@@ -4,27 +4,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="5dp"
+    android:layout_marginHorizontal="5dp"
+    android:layout_marginVertical="5dp"
+    android:layout_marginStart="5dp"
     tools:context=".showResultQuiz">
-
 
 
     <TableLayout
         android:id="@+id/layT"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
-        tools:layout_editor_absoluteY="10dp">
+        app:layout_constraintBottom_toTopOf="@+id/library"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_marginHorizontal="5dp"
-            android:layout_marginVertical="5dp"
+            android:layout_margin="15dp"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginVertical="15dp"
             android:text="Wyniki quizu "
             android:textAlignment="center"
+            android:textColor="#6A1B9A"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/layoutResoult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginVertical="15dp"
+            android:autoText="true"
+            android:background="#FFFFFF"
+            android:minHeight="48dp"
+            android:text="Twój wynik: "
+            android:textAlignment="center"
+            android:textColor="#283593"
             android:textSize="20sp"
             android:textStyle="bold"
             tools:ignore="HardcodedText">
@@ -34,7 +61,7 @@
         <TableRow
             android:id="@+id/badRow"
             android:background="#DC17B5"
-            android:padding="20dp">
+            android:padding="30dp">
 
             <TextView
                 android:id="@+id/badResoult"
@@ -45,7 +72,7 @@
                 android:text="0 - 5 "
                 android:textAlignment="center"
                 android:textAllCaps="false"
-                android:textColor="#1A237E"
+                android:textColor="#000000"
                 android:textIsSelectable="false"
                 android:textStyle="bold"
                 tools:ignore="HardcodedText" />
@@ -66,8 +93,10 @@
 
         <TableRow
             android:id="@+id/middleRow"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:background="#558B2F"
-            android:padding="20dp">
+            android:padding="30dp">
 
             <TextView
                 android:id="@+id/middleResoult"
@@ -123,21 +152,6 @@
 
         </TableRow>
 
-
-        <TextView
-            android:id="@+id/layoutResoult"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_marginHorizontal="5dp"
-            android:layout_marginVertical="5dp"
-            android:text="Twój wynik: "
-            android:textAlignment="center"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            tools:ignore="HardcodedText">
-
-        </TextView>
 
     </TableLayout>
 

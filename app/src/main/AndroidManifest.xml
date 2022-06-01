@@ -21,9 +21,6 @@
             android:name=".previousTable"
             android:exported="false" />
         <activity
-            android:name=".previousResult"
-            android:exported="false" />
-        <activity
             android:name=".quizLife"
             android:exported="false" />
         <activity

@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import androidx.activity.result.contract.ActivityResultContracts
 import kotlinx.android.synthetic.main.activity_quiz.*
 import kotlin.collections.MutableList as MutableList1
 
@@ -154,13 +155,18 @@ class quizLife : AppCompatActivity() {
                 ok.text = "Zobacz wyniki"
 
                 //return point
+                val intent = Intent(this@quizLife,showResultQuiz::class.java).apply{
+                    putExtra("Punkty",point)
+                }
+                startActivity(intent)
 
-                val ok: Button = findViewById(R.id.ok)
+
                 ok.setOnClickListener {
                     this.startActivity(Intent(this, showResultQuiz::class.java))
                 }
 
             }
+
 
         }
     }
