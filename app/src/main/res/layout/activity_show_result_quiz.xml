@@ -6,23 +6,163 @@
     android:layout_height="match_parent"
     tools:context=".showResultQuiz">
 
-    <TextView
-        android:id="@+id/heading"
-        android:layout_width="191dp"
-        android:layout_height="20dp"
-        android:text="Wyniki: "
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TableLayout
+        android:id="@+id/layT"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        tools:layout_editor_absoluteY="10dp">
+
+        <TextView
+            android:id="@+id/layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginVertical="5dp"
+            android:text="Wyniki quizu "
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText">
+
+        </TextView>
+
+        <TableRow
+            android:id="@+id/badRow"
+            android:background="#DC17B5"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/badResoult"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clickable="false"
+                android:text="0 - 5 "
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#1A237E"
+                android:textIsSelectable="false"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/badInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clickable="false"
+                android:text="Oj słabiutko, słabiutko. Poczytaj artykuły stylu życia"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                tools:ignore="HardcodedText" />
+
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/middleRow"
+            android:background="#558B2F"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/middleResoult"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clickable="false"
+                android:text="6 - 10"
+                android:textAlignment="center"
+                android:textColor="#3E2723"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/middleInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clickable="false"
+                android:text="Już lepiej, jeszcze trochę treningu"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                tools:ignore="HardcodedText" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/goodRow"
+            android:background="#E3910E"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/goodResoult"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clickable="false"
+                android:text="11 - 15"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/goodInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clickable="false"
+                android:text="Twój styl życia jest super! Nie zaniedbaj tego"
+                android:textAlignment="center"
+                android:textColor="#3E2723"
+                tools:ignore="HardcodedText" />
+
+        </TableRow>
+
+
+        <TextView
+            android:id="@+id/layoutResoult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginVertical="5dp"
+            android:text="Twój wynik: "
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText">
+
+        </TextView>
+
+    </TableLayout>
+
 
     <Button
         android:id="@+id/backMenu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="265dp"
+        android:layout_height="48dp"
         android:layout_marginBottom="32dp"
-        android:text="Powrót do głównego menu"
+        android:text="MENU"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/library"
+        android:layout_width="265dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="12dp"
+        android:text="CZYTELNIA"
+        app:layout_constraintBottom_toTopOf="@+id/backMenu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="HardcodedText" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

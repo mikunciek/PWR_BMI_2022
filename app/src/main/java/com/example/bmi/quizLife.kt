@@ -148,14 +148,17 @@ class quizLife : AppCompatActivity() {
 
             answers = loadQuestion()
             if (answers === null) { //koniec listy pytań
-                showPoint.text = this.questions.points.toString()
+
+                val point = this.questions.points.toString()
+                showPoint.text = point
                 ok.text = "Zobacz wyniki"
+
+                //return point
 
                 val ok: Button = findViewById(R.id.ok)
                 ok.setOnClickListener {
                     this.startActivity(Intent(this, showResultQuiz::class.java))
                 }
-
 
             }
 
@@ -165,7 +168,6 @@ class quizLife : AppCompatActivity() {
     fun loadQuestion(): List<Answer>? {
 
         val quest = this.questions.getNextQuestion();
-
         if (quest === null) {
             return null
         }
@@ -177,12 +179,15 @@ class quizLife : AppCompatActivity() {
         bButton.text = answers[1].answerText
         cButton.text = answers[2].answerText
 
-
         return answers
     }
 
+   fun sumPoint (point: String): String {
 
-    //fun questionList(): MutableList1 {
+        val point = this.questions.points.toString()
+        return point
+    }
+
 
 
 }

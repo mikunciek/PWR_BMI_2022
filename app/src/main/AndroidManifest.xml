@@ -42,7 +42,7 @@
             android:name=".newNutrion"
             android:exported="false" />
         <activity
-            android:name=".viewPDF"
+            android:name=".libraryPDF"
             android:exported="false" />
         <activity
             android:name=".calculateBMI"

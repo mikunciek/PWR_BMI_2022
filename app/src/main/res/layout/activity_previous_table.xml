@@ -15,73 +15,82 @@
         android:paddingRight="5dp"
         tools:layout_editor_absoluteY="10dp">
 
-    // Add Table rows here
-
         <TextView
             android:id="@+id/layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Poprzednie wyniki BMI: "
-            android:textSize="20dp"
-            android:textStyle="bold">
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText">
 
         </TextView>
 
 
-    <TableRow
-        android:id="@+id/table"
-        android:background="#BA9ED3"
-        android:padding="10dp">
+        <TableRow
+            android:id="@+id/table"
+            android:background="#BA9ED3"
+            android:padding="10dp">
 
-        <TextView
-            android:id="@+id/id"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:clickable="false"
-            android:text="ID" />
+            <TextView
+                android:id="@+id/id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clickable="false"
+                android:text="ID"
+                android:textAlignment="center"
+                tools:ignore="HardcodedText"/>
 
-        <TextView
-            android:id="@+id/date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:clickable="false"
-            android:text="DATA" />
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clickable="false"
+                android:text="DATA"
+                android:textAlignment="center"
+                tools:ignore="HardcodedText"/>
 
-        <TextView
-            android:id="@+id/weight"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Waga" />
+            <TextView
+                android:id="@+id/weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Waga"
+                android:textAlignment="center"
+                tools:ignore="HardcodedText"/>
 
-        <TextView
-            android:id="@+id/height"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Wzrost" />
+            <TextView
+                android:id="@+id/height"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Wzrost"
+                android:textAlignment="center"
+                tools:ignore="HardcodedText"/>
 
-        <TextView
-            android:id="@+id/bmi"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="BMI" />
+            <TextView
+                android:id="@+id/bmi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="BMI"
+                android:textAlignment="center"
+                tools:ignore="HardcodedText"/>
 
-        <TextView
-            android:id="@+id/info"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Info" />
-    </TableRow>
+            <TextView
+                android:id="@+id/info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Info"
+                android:textAlignment="center"
+                tools:ignore="HardcodedText"/>
+        </TableRow>
 
-</TableLayout>
-
-
-
+    </TableLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

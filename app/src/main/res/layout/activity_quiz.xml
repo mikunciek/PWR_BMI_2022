@@ -14,21 +14,25 @@
         android:text="Następne pytanie"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="HardcodedText"/>
 
     <TextView
         android:id="@+id/questionText"
-        android:layout_width="wrap_content"
+        android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:text="Pytanie: "
+        android:textAlignment="center"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/answersGroup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="HardcodedText"/>
 
     <RadioGroup
         android:id="@+id/answersGroup"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="84dp"
         app:layout_constraintBottom_toTopOf="@+id/showPoint"
@@ -38,18 +42,19 @@
 
         <RadioButton
             android:id="@+id/aButton"
-            android:layout_width="wrap_content"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp" />
+            android:layout_marginTop="32dp"
+            tools:ignore="DuplicateSpeakableTextCheck" />
 
         <RadioButton
             android:id="@+id/bButton"
-            android:layout_width="match_parent"
+            android:layout_width="250dp"
             android:layout_height="wrap_content" />
 
         <RadioButton
             android:id="@+id/cButton"
-            android:layout_width="match_parent"
+            android:layout_width="250dp"
             android:layout_height="wrap_content" />
 
     </RadioGroup>

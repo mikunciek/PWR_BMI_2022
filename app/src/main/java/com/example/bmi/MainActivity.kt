@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,7 +22,7 @@ class MainActivity : AppCompatActivity() {
 
         val reading: Button = findViewById(R.id.reading)
         reading.setOnClickListener{
-            this.startActivity(Intent(this, viewPDF::class.java))
+            this.startActivity(Intent(this, libraryPDF::class.java))
         }
 
         val quiz: Button = findViewById(R.id.quizOpen)

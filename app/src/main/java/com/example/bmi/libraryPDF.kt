@@ -5,11 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 
-class viewPDF : AppCompatActivity() {
+class libraryPDF : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_view_pdf)
+        setContentView(R.layout.activity_library_pdf)
 
 
         val nutrion: Button = findViewById(R.id.nutrion)
