@@ -7,13 +7,28 @@
     tools:context=".previousTable">
 
 
+    <Button
+        android:id="@+id/backMainMenu"
+        android:layout_width="150dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="32dp"
+        android:text="MENU"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.532"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <TableLayout
         android:id="@+id/layT"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="396dp"
+        android:layout_height="686dp"
+        android:layout_marginBottom="31dp"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
-        tools:layout_editor_absoluteY="10dp">
+        app:layout_constraintBottom_toTopOf="@+id/backMainMenu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/layout"
@@ -41,7 +56,7 @@
                 android:clickable="false"
                 android:text="ID"
                 android:textAlignment="center"
-                tools:ignore="HardcodedText"/>
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:id="@+id/date"
@@ -51,7 +66,7 @@
                 android:clickable="false"
                 android:text="DATA"
                 android:textAlignment="center"
-                tools:ignore="HardcodedText"/>
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:id="@+id/weight"
@@ -60,7 +75,7 @@
                 android:layout_weight="1"
                 android:text="Waga"
                 android:textAlignment="center"
-                tools:ignore="HardcodedText"/>
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:id="@+id/height"
@@ -69,7 +84,7 @@
                 android:layout_weight="1"
                 android:text="Wzrost"
                 android:textAlignment="center"
-                tools:ignore="HardcodedText"/>
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:id="@+id/bmi"
@@ -78,7 +93,7 @@
                 android:layout_weight="1"
                 android:text="BMI"
                 android:textAlignment="center"
-                tools:ignore="HardcodedText"/>
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:id="@+id/info"
@@ -87,7 +102,7 @@
                 android:layout_weight="1"
                 android:text="Info"
                 android:textAlignment="center"
-                tools:ignore="HardcodedText"/>
+                tools:ignore="HardcodedText" />
         </TableRow>
 
     </TableLayout>

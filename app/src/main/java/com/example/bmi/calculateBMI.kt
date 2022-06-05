@@ -1,13 +1,16 @@
 package com.example.bmi
 
 import android.annotation.SuppressLint
+import android.app.DatePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
+import android.widget.CalendarView
 import android.widget.TextView
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_calculate_bmi.*
+import kotlinx.android.synthetic.main.activity_calculate_bmi.view.*
+import java.util.*
 
 
 class calculateBMI : AppCompatActivity() {
@@ -16,22 +19,29 @@ class calculateBMI : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_calculate_bmi)
 
+        //wybór daty
+        btShowDialog.setOnClickListener{
+            showDatePicker()
+
+        }
 
         save.setOnClickListener {
 
             //data
-            val date = findViewById<TextView>(R.id.editDate)
+            val date = showDate
             //waga
-            val weight = findViewById<TextView>(R.id.editweightNumber).text.toString().toDouble()
+            val weight = editweightNumber.text.toString().toDouble()
             //wzrost
-            val height = findViewById<TextView>(R.id.editheightNumber).text.toString().toDouble()
+            val height = editheightNumber.text.toString().toDouble()
             //obliczenie bmi
             val bmi = BMI(weight, height, date.text.toString())
-            findViewById<TextView>(R.id.bmiValue).text =
+            //val bmi = BMI(weight, height, date.toString())
+
+            bmiValue.text =
                 "Twoje BMI wynosi: " + "%.2f".format(bmi.calculateBMI())
             //info o bmi
             val info = bmi.toString()
-            findViewById<TextView>(R.id.viewInfoBMI).text = "Twój wynik: $info"
+            viewInfoBMI.text = "Twój wynik: $info"
             //wyświetlenie ukrytej akcji - zrób quiz
 
             //dodanie do bazy danych
@@ -55,6 +65,31 @@ class calculateBMI : AppCompatActivity() {
 
 
     }
-}
+
+
+
+    @SuppressLint("SetTextI18n")
+    private fun showDatePicker() {
+
+        val c = Calendar.getInstance()
+        val year = c.get(Calendar.YEAR)
+        val month = c.get(Calendar.MONTH)
+        val day = c.get(Calendar.DAY_OF_MONTH)
+
+        //create dialog
+
+        val datePicker = DatePickerDialog(this,
+        { _, year, month, dayOfMonth ->
+            showDate.text = " " + dayOfMonth + "." + (month+1) + "."+ year
+
+
+        },year,month,day)
+
+            datePicker.show()
+
+        }
+
+    }
+
 
 

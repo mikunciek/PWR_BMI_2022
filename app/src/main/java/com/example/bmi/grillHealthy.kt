@@ -11,6 +11,7 @@ class grillHealthy : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_grill_healthy)
 
+
         val webView: WebView = findViewById(R.id.panel)
 
         webView.settings.javaScriptEnabled = true
@@ -20,8 +21,8 @@ class grillHealthy : AppCompatActivity() {
         webView.canGoBack()
         webView.canGoForward()
         webView.requestFocus()
-        val url =
-            "https://github.com/mikunciek/PWR_BMI_2022/raw/master/pdf/Zasady%20zdrowego%20grillowania.pdf"
+        val url ="https://github.com/mikunciek/PWR_BMI_2022/blob/master/pdf/Zasady%20zdrowego%20grillowania.pdf"
         webView.loadUrl("https://docs.google.com/gview?embedded=true&url=$url")
+
     }
 }

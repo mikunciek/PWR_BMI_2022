@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import androidx.activity.result.contract.ActivityResultContracts
+import kotlinx.android.synthetic.main.activity_library_pdf.*
 import kotlinx.android.synthetic.main.activity_quiz.*
+import kotlinx.android.synthetic.main.activity_quiz.backMainMenu
 import kotlin.collections.MutableList as MutableList1
 
 class quizLife : AppCompatActivity() {
@@ -163,6 +165,12 @@ class quizLife : AppCompatActivity() {
 
                 ok.setOnClickListener {
                     this.startActivity(Intent(this, showResultQuiz::class.java))
+                }
+
+                //akcje powrotu
+
+                backMainMenu.setOnClickListener {
+                    this.startActivity(Intent(this, MainActivity::class.java))
                 }
 
             }

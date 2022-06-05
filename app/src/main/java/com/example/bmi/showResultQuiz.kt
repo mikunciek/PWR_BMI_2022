@@ -17,7 +17,8 @@ class showResultQuiz : AppCompatActivity() {
         setContentView(R.layout.activity_show_result_quiz)
 
 
-        val point = intent.getStringExtra("Punkty")
+        val point = this.intent.getStringExtra("Punkty")
+
 
         layoutResoult.text = "Twój wynik:  $point"
 

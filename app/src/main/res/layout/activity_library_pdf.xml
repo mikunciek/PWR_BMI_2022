@@ -28,24 +28,25 @@
         app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.646"
+        app:layout_constraintVertical_bias="0.698"
         tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/nutrion"
         android:layout_width="265dp"
-        android:layout_height="wrap_content"
+        android:layout_height="68dp"
         android:layout_above="@+id/rehydration"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="68dp"
-        android:layout_marginEnd="73dp"
+        android:layout_marginEnd="42dp"
         android:layout_marginBottom="16dp"
         android:text="Nowe zalecenia żywieniowe"
         app:layout_constraintBottom_toTopOf="@+id/rehydration"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.701"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.981"
         tools:ignore="HardcodedText" />
 
     <Button
@@ -59,51 +60,70 @@
         android:text="Jak się nawadniać w trakcie aktywności fizycznej?"
         app:layout_constraintBottom_toTopOf="@+id/grill"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.705"
+        app:layout_constraintHorizontal_bias="0.701"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.979"
         tools:ignore="HardcodedText" />
+
 
     <Button
         android:id="@+id/grill"
         android:layout_width="265dp"
-        android:layout_height="wrap_content"
+        android:layout_height="68dp"
         android:layout_above="@+id/challenge"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="84dp"
-        android:layout_marginEnd="93dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginBottom="20dp"
         android:text="Jak grillować zdrowo?"
         app:layout_constraintBottom_toTopOf="@+id/challenge"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.701"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/challenge"
         android:layout_width="265dp"
-        android:layout_height="wrap_content"
+        android:layout_height="68dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
+        android:layout_marginEnd="42dp"
         android:layout_marginBottom="16dp"
         android:text="Podejmij 30-dniowe wyzwanie"
         app:layout_constraintBottom_toTopOf="@+id/memory"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.701"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.968"
         tools:ignore="HardcodedText" />
 
     <Button
         android:id="@+id/memory"
         android:layout_width="265dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp"
+        android:layout_height="68dp"
+        android:layout_marginEnd="42dp"
         android:text="Dieta dobra na pamięć"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.701"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.707"
         tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/backMainMenu"
+        android:layout_width="150dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="96dp"
+        android:text="MENU"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/memory" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

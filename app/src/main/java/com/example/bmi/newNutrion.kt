@@ -26,33 +26,8 @@ class newNutrion : AppCompatActivity() {
         webView.canGoForward()
         webView.requestFocus()
         val url =
-           // "https://github.com/mikunciek/PWR_BMI_2022/raw/master/pdf/Dieta%20dobra%20na%20pamie%C4%87.pdf"
             "https://github.com/mikunciek/PWR_BMI_2022/raw/master/pdf/Talerz%20Zdrowego%20%C5%BBywienia.pdf"
         webView.loadUrl("https://docs.google.com/gview?embedded=true&url=$url")
 
-/*
-        val webSettings: WebSettings = webView.settings
-        webSettings.javaScriptEnabled = true
-        WebSettings.PluginState.ON.also { webSettings.pluginState = it }
-        webSettings.setGeolocationEnabled(true)
-        webSettings.javaScriptCanOpenWindowsAutomatically = true
-        webSettings.builtInZoomControls = true
-        webSettings.saveFormData = true
-        webSettings.setAppCacheEnabled(true)
-        webSettings.databaseEnabled = true
-        webSettings.domStorageEnabled = true
-        webSettings.loadsImagesAutomatically = true
-        webSettings.allowFileAccess = true
-        webSettings.allowFileAccessFromFileURLs = true
-        webSettings.allowUniversalAccessFromFileURLs = true
-        webSettings.useWideViewPort = true
-        webSettings.builtInZoomControls = true
-        webSettings.setGeolocationDatabasePath(filesDir.path)
-        webSettings.allowFileAccess = true
-        webSettings.allowUniversalAccessFromFileURLs = true
-
-*/
-
     }
 }
-

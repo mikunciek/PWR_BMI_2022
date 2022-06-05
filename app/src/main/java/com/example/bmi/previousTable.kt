@@ -1,5 +1,6 @@
 package com.example.bmi
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TableLayout
@@ -80,6 +81,12 @@ class previousTable : AppCompatActivity() {
             row.addView(infoText)
 
             tbl.addView(row)
+        }
+
+        //akcje powrotu
+
+        backMainMenu.setOnClickListener {
+            this.startActivity(Intent(this, MainActivity::class.java))
         }
     }
 }
