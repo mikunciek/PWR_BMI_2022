@@ -10,34 +10,35 @@
         android:id="@+id/ok"
         android:layout_width="200dp"
         android:layout_height="60dp"
-        android:layout_marginBottom="168dp"
+        android:layout_marginBottom="84dp"
         android:text="Następne pytanie"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/questionText"
-        android:layout_width="324dp"
-        android:layout_height="123dp"
+        android:layout_width="326dp"
+        android:layout_height="82dp"
         android:text="Pytanie: "
         android:textAlignment="center"
         android:textSize="34sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/answersGroup"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.552"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.283"
+        app:layout_constraintVertical_bias="0.436"
         tools:ignore="HardcodedText" />
 
     <RadioGroup
         android:id="@+id/answersGroup"
         android:layout_width="335dp"
         android:layout_height="224dp"
-        android:layout_marginBottom="88dp"
+        android:layout_marginBottom="24dp"
         app:layout_constraintBottom_toTopOf="@+id/showPoint"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">

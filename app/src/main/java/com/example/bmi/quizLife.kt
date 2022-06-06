@@ -10,10 +10,11 @@ import kotlinx.android.synthetic.main.activity_quiz.*
 import kotlinx.android.synthetic.main.activity_quiz.backMainMenu
 import kotlin.collections.MutableList as MutableList1
 
+@Suppress("ClassName")
 class quizLife : AppCompatActivity() {
 
 
-    val questions = QuizList(
+    private val questions = QuizList(
         listOf(
             Question(
                 "Które produkty powinny stanowić podstawę naszej diety?",
@@ -167,19 +168,15 @@ class quizLife : AppCompatActivity() {
                     this.startActivity(Intent(this, showResultQuiz::class.java))
                 }
 
-                //akcje powrotu
-
-                backMainMenu.setOnClickListener {
-                    this.startActivity(Intent(this, MainActivity::class.java))
-                }
-
             }
-
-
+        }
+        //akcje powrotu
+        backMainMenu.setOnClickListener {
+            this.startActivity(Intent(this, MainActivity::class.java))
         }
     }
 
-    fun loadQuestion(): List<Answer>? {
+    private fun loadQuestion(): List<Answer>? {
 
         val quest = this.questions.getNextQuestion();
         if (quest === null) {

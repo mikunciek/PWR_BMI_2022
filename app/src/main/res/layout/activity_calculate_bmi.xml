@@ -27,15 +27,15 @@
         android:layout_width="70dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="59dp"
+        android:layout_marginTop="128dp"
         android:text="Waga"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@+id/editweightNumber"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.083"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/showDate" />
+        app:layout_constraintTop_toBottomOf="@+id/calculateBMI" />
 
     <TextView
         android:id="@+id/height"
@@ -74,22 +74,8 @@
         android:inputType="numberDecimal"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btShowDialog"
+        app:layout_constraintTop_toBottomOf="@+id/ShowDialog"
         tools:ignore="SpeakableTextPresentCheck" />
-
-    <TextView
-        android:id="@+id/date"
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:text="Data"
-        android:textAlignment="center"
-        android:textAllCaps="true"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/weight"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calculateBMI"
-        app:layout_constraintVertical_bias="0.504" />
 
     <Button
         android:id="@+id/save"
@@ -150,28 +136,33 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/btShowDialog"
+        android:id="@+id/ShowDialog"
         android:layout_width="64dp"
         android:layout_height="48dp"
         android:layout_marginTop="40dp"
-        android:layout_marginEnd="12dp"
+        android:layout_marginEnd="16dp"
         android:text="DATA"
-        android:textSize="8sp"
+        android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/calculateBMI" />
 
     <TextView
         android:id="@+id/showDate"
-        android:layout_width="147dp"
-        android:layout_height="25dp"
+        android:layout_width="149dp"
+        android:layout_height="48dp"
+        android:editable="true"
+        android:elegantTextHeight="false"
+        android:enabled="true"
         android:text="Wybierz datę"
         android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textStyle="italic"
         app:layout_constraintBottom_toTopOf="@+id/editweightNumber"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.598"
+        app:layout_constraintHorizontal_bias="0.587"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.777" />
+        app:layout_constraintVertical_bias="0.848" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

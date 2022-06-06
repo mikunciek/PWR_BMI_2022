@@ -5,11 +5,9 @@ import android.app.DatePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.CalendarView
-import android.widget.TextView
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_calculate_bmi.*
-import kotlinx.android.synthetic.main.activity_calculate_bmi.view.*
+import java.text.SimpleDateFormat
 import java.util.*
 
 
@@ -20,12 +18,15 @@ class calculateBMI : AppCompatActivity() {
         setContentView(R.layout.activity_calculate_bmi)
 
         //wybór daty
-        btShowDialog.setOnClickListener{
+        ShowDialog.setOnClickListener{
             showDatePicker()
-
         }
 
         save.setOnClickListener {
+
+            //if (answers === null) {
+            //            throw Exception("Puste pytania")
+            //        }
 
             //data
             val date = showDate
@@ -35,10 +36,8 @@ class calculateBMI : AppCompatActivity() {
             val height = editheightNumber.text.toString().toDouble()
             //obliczenie bmi
             val bmi = BMI(weight, height, date.text.toString())
-            //val bmi = BMI(weight, height, date.toString())
 
-            bmiValue.text =
-                "Twoje BMI wynosi: " + "%.2f".format(bmi.calculateBMI())
+            bmiValue.text = "Twoje BMI wynosi: " + "%.2f".format(bmi.calculateBMI())
             //info o bmi
             val info = bmi.toString()
             viewInfoBMI.text = "Twój wynik: $info"
@@ -57,15 +56,10 @@ class calculateBMI : AppCompatActivity() {
             this.startActivity(Intent(this, MainActivity::class.java))
         }
 
-
-
         backViewResolut.setOnClickListener {
             this.startActivity(Intent(this, previousTable::class.java))
         }
-
-
     }
-
 
 
     @SuppressLint("SetTextI18n")
@@ -80,15 +74,15 @@ class calculateBMI : AppCompatActivity() {
 
         val datePicker = DatePickerDialog(this,
         { _, year, month, dayOfMonth ->
-            showDate.text = " " + dayOfMonth + "." + (month+1) + "."+ year
 
+            val sdf = SimpleDateFormat("dd.MM.yyyy", Locale.GERMANY)
+            showDate.text = sdf.format(c.time)
 
         },year,month,day)
 
             datePicker.show()
 
         }
-
     }
 
 
