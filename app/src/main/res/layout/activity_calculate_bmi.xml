@@ -119,8 +119,8 @@
         android:id="@+id/backViewResolut"
         android:layout_width="150dp"
         android:layout_height="55dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="56dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="76dp"
         android:text="POPRZEDNIE WYNIKI"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -129,10 +129,11 @@
         android:id="@+id/backMainMenu"
         android:layout_width="150dp"
         android:layout_height="55dp"
-        android:layout_marginBottom="56dp"
+        android:layout_marginBottom="76dp"
         android:text="MENU"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/backViewResolut"
+        app:layout_constraintHorizontal_bias="0.394"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -163,6 +164,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.848" />
+
+
+    <Button
+        android:id="@+id/quizOpen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quiz"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewInfoBMI"
+        app:layout_constraintVertical_bias="0.85"
+        tools:visibility="invisible" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

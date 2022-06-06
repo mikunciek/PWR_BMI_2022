@@ -1,10 +1,11 @@
 package com.example.bmi
-
 import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.TextUtils
+import android.view.View
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_calculate_bmi.*
 import java.text.SimpleDateFormat
@@ -12,78 +13,106 @@ import java.util.*
 
 
 class calculateBMI : AppCompatActivity() {
+
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_calculate_bmi)
 
-        //wybór daty
-        ShowDialog.setOnClickListener{
+
+        //deklaracja stanów początkowych
+        quizOpen.visibility = View.INVISIBLE
+        val sdf = SimpleDateFormat("dd.MM.yyyy", Locale.GERMANY)
+        showDate.text= sdf.format(Date())
+
+
+        ShowDialog.setOnClickListener { //wybór daty
             showDatePicker()
         }
 
         save.setOnClickListener {
 
-            //if (answers === null) {
-            //            throw Exception("Puste pytania")
-            //        }
+            val date = showDate   //data
+            val weight = editweightNumber.text.toString().toDouble()    //waga
+            val height = editheightNumber.text.toString().toDouble()   //wzrost
 
-            //data
-            val date = showDate
-            //waga
-            val weight = editweightNumber.text.toString().toDouble()
-            //wzrost
-            val height = editheightNumber.text.toString().toDouble()
-            //obliczenie bmi
-            val bmi = BMI(weight, height, date.text.toString())
+            //sprawdzenie poprawności danych - czy to liczba i czy niepuste
+            if (TextUtils.isEmpty(editweightNumber.toString()) && TextUtils.isEmpty(editheightNumber.toString())) {
 
-            bmiValue.text = "Twoje BMI wynosi: " + "%.2f".format(bmi.calculateBMI())
-            //info o bmi
-            val info = bmi.toString()
-            viewInfoBMI.text = "Twój wynik: $info"
-            //wyświetlenie ukrytej akcji - zrób quiz
+                Toast.makeText(this, "Puste pole", Toast.LENGTH_SHORT).show()
 
-            //dodanie do bazy danych
-            val dataBase = databaseHandler(this)
-            dataBase.addBMI(bmi)
-            Toast.makeText(this, "BMI dodane", Toast.LENGTH_SHORT).show()
+            } else{
 
+                val bmi = BMI(weight, height, date.text.toString())    //obliczenie bmi
+                bmiValue.text = "Twoje BMI wynosi: " + "%.2f".format(bmi.calculateBMI())
+
+                val info = bmi.toString()   //info o bmi
+                viewInfoBMI.text = "Twój wynik: $info"
+
+                val dataBase = databaseHandler(this)    //dodanie do bazy danych
+                dataBase.addBMI(bmi)
+                Toast.makeText(this, "BMI dodane", Toast.LENGTH_SHORT).show()
+
+                quizOpen.visibility = View.VISIBLE //wyświetlenie ukrytej akcji - zrób quiz
+            }
+
+            quizOpen.setOnClickListener {
+                this.startActivity(Intent(this, quizLife::class.java))
+            }
+
+            backMainMenu.setOnClickListener { //powrót do menu
+                this.startActivity(Intent(this, MainActivity::class.java))
+            }
+
+            backViewResolut.setOnClickListener { //zobacz poprzednie wyniki
+                this.startActivity(Intent(this, previousTable::class.java))
+            }
         }
 
-        //akcje powrotu
 
-        backMainMenu.setOnClickListener {
-            this.startActivity(Intent(this, MainActivity::class.java))
+        fun isNumeric(d: Double): Boolean { //sprawdza czy jest numerem
+            var numeric = true
+            try {
+                val num = java.lang.Double.parseDouble(d.toString())
+            } catch (e: NumberFormatException) {
+                numeric = false
+            }
+            return numeric
         }
 
-        backViewResolut.setOnClickListener {
-            this.startActivity(Intent(this, previousTable::class.java))
+        fun isCorrect(n: Double): Boolean {
+            val flagNum: Boolean = isNumeric(n)
+
+            val flagBlank: Boolean = isNumeric(n)
+
+            if (!flagNum) {
+                throw NumberFormatException(": Wpisz cyfry")
+            }
+            if (!flagBlank) {
+                throw BlankException("Puste pole")
+            }
+            return true
         }
+
     }
 
-
-    @SuppressLint("SetTextI18n")
     private fun showDatePicker() {
-
         val c = Calendar.getInstance()
         val year = c.get(Calendar.YEAR)
         val month = c.get(Calendar.MONTH)
         val day = c.get(Calendar.DAY_OF_MONTH)
 
-        //create dialog
-
-        val datePicker = DatePickerDialog(this,
-        { _, year, month, dayOfMonth ->
-
-            val sdf = SimpleDateFormat("dd.MM.yyyy", Locale.GERMANY)
-            showDate.text = sdf.format(c.time)
-
-        },year,month,day)
-
-            datePicker.show()
-
-        }
+        val datePicker = DatePickerDialog(   //okno kalendarza
+            this,
+            { _, year, month, dayOfMonth ->
+                val sdf = SimpleDateFormat("dd.MM.yyyy", Locale.GERMANY)
+                showDate.text = sdf.format(c.time)
+            }, year, month, day
+        )
+        datePicker.show()
     }
+}
+
 
 
 

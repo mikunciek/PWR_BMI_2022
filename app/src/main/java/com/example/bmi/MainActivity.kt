@@ -3,7 +3,6 @@ package com.example.bmi
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -26,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-        quizOpen.setOnClickListener {
+        quizO.setOnClickListener {
             this.startActivity(Intent(this, quizLife::class.java))
         }
 
