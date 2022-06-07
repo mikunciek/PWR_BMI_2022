@@ -38,10 +38,16 @@ class calculateBMI : AppCompatActivity() {
         }
 
         save.setOnClickListener {
+            //obsługa błędów, żeby pole nie było puste - wczesne zwrócenie
+            if(editWeightNumber.text.isNullOrBlank() || editHeightNumber.text.isNullOrBlank()){
+                Toast.makeText(this, "Niepoprawne dane", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
 
             val date = showDate   //data
             val weight = editWeightNumber.text.toString().toDouble()    //waga
             val height = editHeightNumber.text.toString().toDouble()   //wzrost
+
 
             val bmi = BMI(weight, height, date.text.toString())    //obliczenie bmi
             bmiValue.text = "Twoje BMI wynosi: " + "%.2f".format(bmi.calculateBMI())
@@ -59,8 +65,6 @@ class calculateBMI : AppCompatActivity() {
             quizOpen.setOnClickListener {
                 this.startActivity(Intent(this, quizLife::class.java))
             }
-
-
         }
 
         backMainMenu.setOnClickListener { //powrót do menu
