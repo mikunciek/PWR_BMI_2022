@@ -10,13 +10,15 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/weightContainer"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="156dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         app:helperText="  "
         app:helperTextTextColor="@android:color/holo_red_dark"
+        app:counterEnabled = "true"
+        app:counterMaxLength="3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -28,20 +30,23 @@
             android:hint="Waga"
             android:inputType="numberDecimal"
             android:lines="1"
-            android:textColorHint="#757575" />
+            android:textColorHint="#757575"
+            tools:ignore="TouchTargetSizeCheck"
+            app:endIconMode="clear_text"/>
 
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/heightContainer"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="20dp"
-        app:counterMaxLength="16"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
         app:helperText="  "
+        app:counterEnabled = "true"
+        app:counterMaxLength="3"
         app:helperTextTextColor="@android:color/holo_red_dark"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,7 +60,8 @@
             android:inputType="numberDecimal"
             android:lines="1"
             android:maxLength="16"
-            android:textColorHint="#757575" />
+            android:textColorHint="#757575"
+            app:endIconMode="clear_text"/>
 
 
     </com.google.android.material.textfield.TextInputLayout>
