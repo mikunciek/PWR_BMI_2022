@@ -7,97 +7,96 @@
     android:visibility="visible"
     tools:context=".calculateBMI">
 
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/weightContainer"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="156dp"
+        app:helperText="  "
+        app:helperTextTextColor="@android:color/holo_red_dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editWeightNumber"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Waga"
+            android:inputType="numberDecimal"
+            android:lines="1"
+            android:textColorHint="#757575" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/heightContainer"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        app:counterMaxLength="16"
+        app:helperText="  "
+        app:helperTextTextColor="@android:color/holo_red_dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/weightContainer">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editHeightNumber"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Wzrost"
+            android:inputType="numberDecimal"
+            android:lines="1"
+            android:maxLength="16"
+            android:textColorHint="#757575" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="zapisz"
+        android:textColor="#311B92"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/heightContainer" />
+
     <TextView
         android:id="@+id/calculateBMI"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:text="OBLICZ BMI"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.568"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/weight"
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="128dp"
-        android:text="Waga"
-        android:textAlignment="center"
-        android:textAllCaps="true"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@+id/editweightNumber"
-        app:layout_constraintHorizontal_bias="0.083"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calculateBMI" />
-
-    <TextView
-        android:id="@+id/height"
-        android:layout_width="70dp"
-        android:layout_height="wrap_content"
-        android:text="Wzrost"
-        android:textAlignment="center"
-        android:textAllCaps="true"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/editheightNumber"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/weight"
-        app:layout_constraintVertical_bias="0.093" />
-
-    <EditText
-        android:id="@+id/editheightNumber"
-        android:layout_width="145dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="108dp"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editweightNumber"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <EditText
-        android:id="@+id/editweightNumber"
-        android:layout_width="145dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="108dp"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ShowDialog"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <Button
-        android:id="@+id/save"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:text="Zapisz dane"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.63"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editheightNumber" />
 
     <TextView
         android:id="@+id/bmiValue"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="25dp"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.687"
+        app:layout_constraintHorizontal_bias="0.572"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/save" />
 
@@ -108,12 +107,10 @@
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/backMainMenu"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.694"
+        app:layout_constraintHorizontal_bias="0.572"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bmiValue"
-        app:layout_constraintVertical_bias="0.141" />
+        app:layout_constraintTop_toBottomOf="@+id/bmiValue" />
 
     <Button
         android:id="@+id/backViewResolut"
@@ -136,35 +133,35 @@
         app:layout_constraintHorizontal_bias="0.394"
         app:layout_constraintStart_toStartOf="parent" />
 
+
     <Button
         android:id="@+id/ShowDialog"
         android:layout_width="64dp"
         android:layout_height="48dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="20dp"
         android:text="DATA"
         android:textSize="10sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calculateBMI" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/showDate"
         android:layout_width="149dp"
         android:layout_height="48dp"
-        android:editable="true"
+        android:layout_marginTop="40dp"
         android:elegantTextHeight="false"
         android:enabled="true"
         android:text="Wybierz datę"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textStyle="italic"
-        app:layout_constraintBottom_toTopOf="@+id/editweightNumber"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.587"
+        app:layout_constraintBottom_toTopOf="@+id/weightContainer"
+        app:layout_constraintEnd_toStartOf="@+id/ShowDialog"
+        app:layout_constraintHorizontal_bias="0.735"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.848" />
-
+        app:layout_constraintTop_toBottomOf="@+id/calculateBMI"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/quizOpen"

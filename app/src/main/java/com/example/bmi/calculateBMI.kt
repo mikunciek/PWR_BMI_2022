@@ -2,11 +2,11 @@ package com.example.bmi
 import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_calculate_bmi.*
 import java.text.SimpleDateFormat
 import java.util.*
@@ -33,11 +33,11 @@ class calculateBMI : AppCompatActivity() {
         save.setOnClickListener {
 
             val date = showDate   //data
-            val weight = editweightNumber.text.toString().toDouble()    //waga
-            val height = editheightNumber.text.toString().toDouble()   //wzrost
+            val weight = editWeightNumber.text.toString().toDouble()    //waga
+            val height = editHeightNumber.text.toString().toDouble()   //wzrost
 
             //sprawdzenie poprawności danych - czy to liczba i czy niepuste
-            if (TextUtils.isEmpty(editweightNumber.toString()) && TextUtils.isEmpty(editheightNumber.toString())) {
+            if (TextUtils.isEmpty(editWeightNumber.toString()) && TextUtils.isEmpty(editHeightNumber.toString())) {
 
                 Toast.makeText(this, "Puste pole", Toast.LENGTH_SHORT).show()
 

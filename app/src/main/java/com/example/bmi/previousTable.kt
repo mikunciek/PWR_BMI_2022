@@ -7,8 +7,6 @@ import android.widget.TableLayout
 import android.widget.TableRow
 import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_calculate_bmi.*
-import kotlinx.android.synthetic.main.activity_calculate_bmi.height
-import kotlinx.android.synthetic.main.activity_calculate_bmi.weight
 import java.util.*
 
 class previousTable : AppCompatActivity() {
