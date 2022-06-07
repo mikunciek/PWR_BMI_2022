@@ -33,6 +33,7 @@ class calculateBMI : AppCompatActivity() {
         showDate.text = sdf.format(Date())
 
 
+
         ShowDialog.setOnClickListener { //wybór daty
             showDatePicker()
         }
@@ -40,7 +41,18 @@ class calculateBMI : AppCompatActivity() {
         save.setOnClickListener {
             //obsługa błędów, żeby pole nie było puste - wczesne zwrócenie
             if(editWeightNumber.text.isNullOrBlank() || editHeightNumber.text.isNullOrBlank()){
-                Toast.makeText(this, "Niepoprawne dane", Toast.LENGTH_SHORT).show()
+
+               if(editWeightNumber.text.isNullOrBlank()){
+                   weightContainer.helperText ="Wymagane*"
+               }
+
+                if(editHeightNumber.text.isNullOrBlank()){
+                    heightContainer.helperText ="Wymagane*"
+                }
+
+
+               // heightContainer.helperText ="Wymagane*"
+
                 return@setOnClickListener
             }
 
