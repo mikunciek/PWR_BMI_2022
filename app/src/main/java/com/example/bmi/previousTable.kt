@@ -7,7 +7,7 @@ import android.widget.TableLayout
 import android.widget.TableRow
 import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_calculate_bmi.*
-import java.util.*
+
 
 class previousTable : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

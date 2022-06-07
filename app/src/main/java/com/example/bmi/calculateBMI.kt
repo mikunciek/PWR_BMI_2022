@@ -60,13 +60,15 @@ class calculateBMI : AppCompatActivity() {
                 this.startActivity(Intent(this, quizLife::class.java))
             }
 
-            backMainMenu.setOnClickListener { //powrót do menu
-                this.startActivity(Intent(this, MainActivity::class.java))
-            }
 
-            backViewResolut.setOnClickListener { //zobacz poprzednie wyniki
-                this.startActivity(Intent(this, previousTable::class.java))
-            }
+        }
+
+        backMainMenu.setOnClickListener { //powrót do menu
+            this.startActivity(Intent(this, MainActivity::class.java))
+        }
+
+        backViewResolut.setOnClickListener { //zobacz poprzednie wyniki
+            this.startActivity(Intent(this, previousTable::class.java))
         }
 
 
