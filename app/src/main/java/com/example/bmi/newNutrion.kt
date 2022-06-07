@@ -1,12 +1,11 @@
 package com.example.bmi
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
-import android.webkit.WebSettings
 import android.webkit.WebView
-import android.webkit.WebViewClient
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_new_nutrion.*
+import kotlinx.android.synthetic.main.activity_quiz.*
 
 class newNutrion : AppCompatActivity() {
 
@@ -29,5 +28,9 @@ class newNutrion : AppCompatActivity() {
             "https://github.com/mikunciek/PWR_BMI_2022/raw/master/pdf/Talerz%20Zdrowego%20%C5%BBywienia.pdf"
         webView.loadUrl("https://docs.google.com/gview?embedded=true&url=$url")
 
+
+        backMainMenu.setOnClickListener {
+            this.startActivity(Intent(this, MainActivity::class.java))
+        }
     }
 }

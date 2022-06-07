@@ -1,9 +1,11 @@
 package com.example.bmi
 
 import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import android.webkit.WebView
+import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_quiz.*
 
 class grillHealthy : AppCompatActivity() {
     @SuppressLint("SetJavaScriptEnabled")
@@ -24,5 +26,8 @@ class grillHealthy : AppCompatActivity() {
         val url ="https://github.com/mikunciek/PWR_BMI_2022/raw/master/pdf/Zasady%20zdrowego%20grillowania.pdf"
         webView.loadUrl("https://docs.google.com/gview?embedded=true&url=$url")
 
+        backMainMenu.setOnClickListener {
+            this.startActivity(Intent(this, MainActivity::class.java))
+        }
     }
 }
