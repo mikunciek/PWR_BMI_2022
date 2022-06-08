@@ -9,12 +9,12 @@ import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_calculate_bmi.*
 
 
-class previousTable : AppCompatActivity() {
+class PreviousTable : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_previous_table)
 
-        val db = databaseHandler(this)
+        val db = DatabaseHandler(this)
         val list = db.allData()
 
         //db.clear()

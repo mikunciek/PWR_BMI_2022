@@ -12,7 +12,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 
-class calculateBMI : AppCompatActivity() {
+class CalculateBMI : AppCompatActivity() {
 
     //val binding : ActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_calculate_bmi)
 
@@ -63,7 +63,7 @@ class calculateBMI : AppCompatActivity() {
             val info = bmi.toString()   //info o bmi
             viewInfoBMI.text = "Twój wynik: $info"
 
-            val dataBase = databaseHandler(this)    //dodanie do bazy danych
+            val dataBase = DatabaseHandler(this)    //dodanie do bazy danych
             dataBase.addBMI(bmi)
             Toast.makeText(this, "BMI dodane", Toast.LENGTH_SHORT).show()
 
@@ -71,7 +71,7 @@ class calculateBMI : AppCompatActivity() {
 
 
             quizOpen.setOnClickListener {
-                this.startActivity(Intent(this, quizLife::class.java))
+                this.startActivity(Intent(this, QuizLife::class.java))
             }
         }
 
@@ -80,7 +80,7 @@ class calculateBMI : AppCompatActivity() {
         }
 
         backViewResolut.setOnClickListener { //zobacz poprzednie wyniki
-            this.startActivity(Intent(this, previousTable::class.java))
+            this.startActivity(Intent(this, PreviousTable::class.java))
         }
 
     }

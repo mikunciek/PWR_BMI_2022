@@ -15,34 +15,34 @@
         android:theme="@style/Theme.BMI"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".showResultQuiz"
+            android:name=".ShowResultQuiz"
             android:exported="false" />
         <activity
-            android:name=".previousTable"
+            android:name=".PreviousTable"
             android:exported="false" />
         <activity
-            android:name=".quizLife"
+            android:name=".QuizLife"
             android:exported="false" />
         <activity
-            android:name=".memoryGood"
+            android:name=".MemoryGood"
             android:exported="false" />
         <activity
-            android:name=".daysChallenge"
+            android:name=".DaysChallenge"
             android:exported="false" />
         <activity
-            android:name=".grillHealthy"
+            android:name=".GrillHealthy"
             android:exported="false" />
         <activity
-            android:name=".rehydrationActivity"
+            android:name=".RehydrationActivity"
             android:exported="false" />
         <activity
-            android:name=".newNutrion"
+            android:name=".NewNutrion"
             android:exported="false" />
         <activity
-            android:name=".libraryPDF"
+            android:name=".LibraryPDF"
             android:exported="false" />
         <activity
-            android:name=".calculateBMI"
+            android:name=".CalculateBMI"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

@@ -3,15 +3,11 @@ package com.example.bmi
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import androidx.activity.result.contract.ActivityResultContracts
-import kotlinx.android.synthetic.main.activity_library_pdf.*
 import kotlinx.android.synthetic.main.activity_quiz.*
 import kotlinx.android.synthetic.main.activity_quiz.backMainMenu
-import kotlin.collections.MutableList as MutableList1
 
 @Suppress("ClassName")
-class quizLife : AppCompatActivity() {
+class QuizLife : AppCompatActivity() {
 
 
     private val questions = QuizList(
@@ -158,14 +154,14 @@ class quizLife : AppCompatActivity() {
                 ok.text = "Zobacz wyniki"
 
                 //return point
-                val intent = Intent(this@quizLife,showResultQuiz::class.java).apply{
+                val intent = Intent(this@QuizLife,ShowResultQuiz::class.java).apply{
                     putExtra("Punkty",point)
                 }
                 startActivity(intent)
 
 
                 ok.setOnClickListener {
-                    this.startActivity(Intent(this, showResultQuiz::class.java))
+                    this.startActivity(Intent(this, ShowResultQuiz::class.java))
                 }
 
             }

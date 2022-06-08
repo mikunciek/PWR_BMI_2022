@@ -17,21 +17,21 @@ class MainActivity : AppCompatActivity() {
         //StopButton - nie trzeba deklarować zmiennej wcześniej
 
         calculate.setOnClickListener {
-            this.startActivity(Intent(this, calculateBMI::class.java))
+            this.startActivity(Intent(this, CalculateBMI::class.java))
         }
 
         reading.setOnClickListener{
-            this.startActivity(Intent(this, libraryPDF::class.java))
+            this.startActivity(Intent(this, LibraryPDF::class.java))
         }
 
 
         quizO.setOnClickListener {
-            this.startActivity(Intent(this, quizLife::class.java))
+            this.startActivity(Intent(this, QuizLife::class.java))
         }
 
 
         previous.setOnClickListener {
-            this.startActivity(Intent(this, previousTable::class.java))
+            this.startActivity(Intent(this, PreviousTable::class.java))
         }
 
 

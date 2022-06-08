@@ -7,11 +7,12 @@ import android.webkit.WebView
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_quiz.*
 
-class memoryGood : AppCompatActivity() {
+class GrillHealthy : AppCompatActivity() {
     @SuppressLint("SetJavaScriptEnabled")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_memory_good)
+        setContentView(R.layout.activity_grill_healthy)
+
 
         val webView: WebView = findViewById(R.id.panel)
 
@@ -22,8 +23,7 @@ class memoryGood : AppCompatActivity() {
         webView.canGoBack()
         webView.canGoForward()
         webView.requestFocus()
-        val url =
-            "https://github.com/mikunciek/PWR_BMI_2022/raw/master/pdf/Dieta%20dobra%20na%20pamie%C4%87.pdf"
+        val url ="https://github.com/mikunciek/PWR_BMI_2022/raw/master/pdf/Zasady%20zdrowego%20grillowania.pdf"
         webView.loadUrl("https://docs.google.com/gview?embedded=true&url=$url")
 
         backMainMenu.setOnClickListener {
