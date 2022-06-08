@@ -16,7 +16,7 @@
         app:icon="@android:drawable/ic_menu_revert"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.532"
+        app:layout_constraintHorizontal_bias="0.107"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TableLayout
@@ -109,6 +109,16 @@
         </TableRow>
 
     </TableLayout>
+
+    <Button
+        android:id="@+id/graph"
+        android:layout_width="150dp"
+        android:layout_height="55dp"
+        android:text="WYKRES"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/backMainMenu"
+        app:layout_constraintTop_toBottomOf="@+id/layT" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

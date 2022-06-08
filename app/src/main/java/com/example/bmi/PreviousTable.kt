@@ -1,12 +1,13 @@
 package com.example.bmi
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TableLayout
 import android.widget.TableRow
 import android.widget.TextView
-import kotlinx.android.synthetic.main.activity_calculate_bmi.*
+import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_calculate_bmi.backMainMenu
+import kotlinx.android.synthetic.main.activity_previous_table.*
 
 
 class PreviousTable : AppCompatActivity() {
@@ -85,6 +86,10 @@ class PreviousTable : AppCompatActivity() {
 
         backMainMenu.setOnClickListener {
             this.startActivity(Intent(this, MainActivity::class.java))
+        }
+
+        graph.setOnClickListener {
+            this.startActivity(Intent(this, GraphResult::class.java))
         }
     }
 }

@@ -15,6 +15,9 @@
         android:theme="@style/Theme.BMI"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".GraphResult"
+            android:exported="false" />
+        <activity
             android:name=".ShowResultQuiz"
             android:exported="false" />
         <activity
