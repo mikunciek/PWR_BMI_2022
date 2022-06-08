@@ -43,16 +43,12 @@ class calculateBMI : AppCompatActivity() {
             if(editWeightNumber.text.isNullOrBlank() || editHeightNumber.text.isNullOrBlank()){
 
                if(editWeightNumber.text.isNullOrBlank()){
-                   weightContainer.helperText ="Wymagane*"
+                   weightContainer.error = "Wymagane*"
                }
 
                 if(editHeightNumber.text.isNullOrBlank()){
-                    heightContainer.helperText ="Wymagane*"
+                    heightContainer.error ="Wymagane*"
                 }
-
-
-               // heightContainer.helperText ="Wymagane*"
-
                 return@setOnClickListener
             }
 
