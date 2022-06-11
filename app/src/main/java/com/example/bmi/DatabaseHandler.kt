@@ -87,4 +87,28 @@ class DatabaseHandler(context: Context?) :
         }
         return date
     }
+
+    fun delLastItem()
+    {
+        val selectQuery = "SELECT id FROM $TABLE_BMI_STATS ORDER BY id DESC LIMIT 1"
+        val deleteQuery = "DELETE FROM $TABLE_BMI_STATS WHERE id=?"
+        var db = this.readableDatabase
+        var id: String? = null;
+
+        val cursor = db.rawQuery(selectQuery, null)
+
+        if(cursor.moveToFirst()) {
+            id = cursor.getString(0)
+        }
+
+        if(id === null) {
+            return
+        }
+
+        db = this.writableDatabase
+        db.delete(
+            TABLE_BMI_STATS,"id=?", arrayOf(id)
+        )
+        db.close() //zamyka połaczenie
+    }
 }

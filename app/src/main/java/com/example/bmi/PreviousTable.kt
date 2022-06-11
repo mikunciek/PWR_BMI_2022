@@ -18,11 +18,41 @@ class PreviousTable : AppCompatActivity() {
 
         graph.visibility = View.INVISIBLE
 
-
         val db = DatabaseHandler(this)
         val list = db.allData()
 
-        //db.clear()
+        updateTable()
+
+
+        if (list.size > 2) {
+            graph.visibility = View.VISIBLE
+            graph.setOnClickListener {
+                this.startActivity(Intent(this, GraphResult::class.java))
+            }
+        } else {
+            graph.visibility = View.INVISIBLE
+        }
+
+
+        //akcje powrotu
+
+        backMainMenu.setOnClickListener {
+            this.startActivity(Intent(this, MainActivity::class.java))
+        }
+
+        deleteRow.setOnClickListener() {
+            db.delLastItem()
+            updateTable()
+        }
+
+
+    }
+
+    private fun updateTable() {
+
+
+        val db = DatabaseHandler(this)
+        val list = db.allData()
 
         //make sure that the lists contain data or else display will be blank screen
 
@@ -37,7 +67,7 @@ class PreviousTable : AppCompatActivity() {
         )
 
         val tbl = findViewById<TableLayout>(R.id.layT)
-
+        tbl.removeViews(0, tbl.childCount) // czyścimy "starą" tabelę i dajemy aktualne dane
         //i in 0..idList.size-1 - indicies zwraca zakres indeksu od pierwszej do ostatniej pozycji
         for (bmi in list) {
 
@@ -85,40 +115,7 @@ class PreviousTable : AppCompatActivity() {
             tbl.addView(row)
 
 
-            deleteRow.setOnClickListener() {
-                cleanTable(row)
-                //row.removeView()
-            }
-
-
-
-        }
-
-
-        if (list.size > 2) {
-            graph.visibility = View.VISIBLE
-            graph.setOnClickListener {
-                this.startActivity(Intent(this, GraphResult::class.java))
-            }
-        } else {
-            graph.visibility = View.INVISIBLE
-        }
-
-
-        //akcje powrotu
-
-        backMainMenu.setOnClickListener {
-            this.startActivity(Intent(this, MainActivity::class.java))
-        }
-
-
-    }
-
-    private fun cleanTable(row: TableRow) {  //usuwa mi kolumny
-        val childCount = table.childCount
-
-        if (childCount > 1) {
-            table.removeViews(1, childCount - 1)
         }
     }
+
 }

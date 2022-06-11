@@ -22,8 +22,8 @@ class CalculateBMI : AppCompatActivity() {
 
         //deklaracja stanów początkowych
         quizOpen.visibility = View.INVISIBLE
-        val sdf = SimpleDateFormat("dd.MM.yyyy", Locale.GERMANY)
-        showDate.text = sdf.format(Date())
+        val sdfTmp = SimpleDateFormat("dd.MM.yyyy", Locale.GERMANY)
+        showDate.text = sdfTmp.format(Date())
 
 
 
@@ -92,8 +92,9 @@ class CalculateBMI : AppCompatActivity() {
         val datePicker = DatePickerDialog(   //okno kalendarza
             this,
             { _, year, month, dayOfMonth ->
-                val sdf = SimpleDateFormat("dd.MM.yyyy", Locale.GERMANY)
-                showDate.text = sdf.format(c.time)
+                val sdfChange = SimpleDateFormat("dd.MM.yyyy", Locale.GERMANY)
+                c.set(year, month, dayOfMonth)
+                showDate.text = sdfChange.format(c.time)
             }, year, month, day
         )
         datePicker.show()
