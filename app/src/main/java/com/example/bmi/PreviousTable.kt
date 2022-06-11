@@ -19,19 +19,9 @@ class PreviousTable : AppCompatActivity() {
         graph.visibility = View.INVISIBLE
 
         val db = DatabaseHandler(this)
-        val list = db.allData()
 
         updateTable()
 
-
-        if (list.size > 2) {
-            graph.visibility = View.VISIBLE
-            graph.setOnClickListener {
-                this.startActivity(Intent(this, GraphResult::class.java))
-            }
-        } else {
-            graph.visibility = View.INVISIBLE
-        }
 
 
         //akcje powrotu
@@ -69,6 +59,7 @@ class PreviousTable : AppCompatActivity() {
         val tbl = findViewById<TableLayout>(R.id.layT)
         tbl.removeViews(0, tbl.childCount) // czyścimy "starą" tabelę i dajemy aktualne dane
         //i in 0..idList.size-1 - indicies zwraca zakres indeksu od pierwszej do ostatniej pozycji
+        var i = 1
         for (bmi in list) {
 
             //Creating new tablerows and textviews
@@ -85,7 +76,7 @@ class PreviousTable : AppCompatActivity() {
 
             //setting the text
 
-            idText.text = bmi.id.toString()
+            idText.text = i.toString()
             dateText.text = bmi.date.toString()
             weightText.text = bmi.weight.toString()
             heightText.text = bmi.height.toString()
@@ -114,7 +105,17 @@ class PreviousTable : AppCompatActivity() {
 
             tbl.addView(row)
 
+            i++
+        }
 
+
+        if (list.size > 2) {
+            graph.visibility = View.VISIBLE
+            graph.setOnClickListener {
+                this.startActivity(Intent(this, GraphResult::class.java))
+            }
+        } else {
+            graph.visibility = View.INVISIBLE
         }
     }
 
