@@ -2,6 +2,7 @@ package com.example.bmi
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.TableLayout
 import android.widget.TableRow
 import android.widget.TextView
@@ -14,6 +15,9 @@ class PreviousTable : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_previous_table)
+
+        graph.visibility = View.INVISIBLE
+
 
         val db = DatabaseHandler(this)
         val list = db.allData()
@@ -49,7 +53,6 @@ class PreviousTable : AppCompatActivity() {
             val infoText = TextView(this)
 
 
-
             //setting the text
 
             idText.text = bmi.id.toString()
@@ -80,7 +83,27 @@ class PreviousTable : AppCompatActivity() {
             row.addView(infoText)
 
             tbl.addView(row)
+
+
+            deleteRow.setOnClickListener() {
+                cleanTable(row)
+                //row.removeView()
+            }
+
+
+
         }
+
+
+        if (list.size > 2) {
+            graph.visibility = View.VISIBLE
+            graph.setOnClickListener {
+                this.startActivity(Intent(this, GraphResult::class.java))
+            }
+        } else {
+            graph.visibility = View.INVISIBLE
+        }
+
 
         //akcje powrotu
 
@@ -88,8 +111,14 @@ class PreviousTable : AppCompatActivity() {
             this.startActivity(Intent(this, MainActivity::class.java))
         }
 
-        graph.setOnClickListener {
-            this.startActivity(Intent(this, GraphResult::class.java))
+
+    }
+
+    private fun cleanTable(row: TableRow) {  //usuwa mi kolumny
+        val childCount = table.childCount
+
+        if (childCount > 1) {
+            table.removeViews(1, childCount - 1)
         }
     }
 }

@@ -14,18 +14,11 @@ import java.util.*
 
 class CalculateBMI : AppCompatActivity() {
 
-    //val binding : ActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_calculate_bmi)
-
-
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_calculate_bmi)
-
-
-        //setContentView(binding.root)
-
 
         //deklaracja stanów początkowych
         quizOpen.visibility = View.INVISIBLE
@@ -35,7 +28,7 @@ class CalculateBMI : AppCompatActivity() {
 
 
         ShowDialog.setOnClickListener { //wybór daty
-            showDatePicker()
+            viewDatePicker()
         }
 
         save.setOnClickListener {
@@ -52,6 +45,10 @@ class CalculateBMI : AppCompatActivity() {
                 return@setOnClickListener
             }
 
+            weightContainer.helperText = "Podaj wagę"
+            heightContainer.helperText = "Podaj wzrost"
+
+
             val date = showDate   //data
             val weight = editWeightNumber.text.toString().toDouble()    //waga
             val height = editHeightNumber.text.toString().toDouble()   //wzrost
@@ -64,6 +61,7 @@ class CalculateBMI : AppCompatActivity() {
             viewInfoBMI.text = "Twój wynik: $info"
 
             val dataBase = DatabaseHandler(this)    //dodanie do bazy danych
+            //dataBase.clear()
             dataBase.addBMI(bmi)
             Toast.makeText(this, "BMI dodane", Toast.LENGTH_SHORT).show()
 
@@ -85,7 +83,7 @@ class CalculateBMI : AppCompatActivity() {
 
     }
 
-    private fun showDatePicker() {
+    private fun viewDatePicker() {
         val c = Calendar.getInstance()
         val year = c.get(Calendar.YEAR)
         val month = c.get(Calendar.MONTH)
