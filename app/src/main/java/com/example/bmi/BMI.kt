@@ -5,9 +5,7 @@ class BMI(
     val height: Double,
     val date: String,
     val id: Int? = null
-
     ) {
-
 
     fun calculateBMI(): Double {
         val bmi = weight / ((height / 100.00) * (height / 100.00))

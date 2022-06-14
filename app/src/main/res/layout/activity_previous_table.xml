@@ -6,47 +6,32 @@
     android:layout_height="match_parent"
     tools:context=".PreviousTable">
 
-    <Button
-        android:id="@+id/graph"
-        android:layout_width="150dp"
-        android:layout_height="55dp"
-        android:text="@string/wykres"
-        android:textColor="#311B92"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layT"
-        app:layout_constraintVertical_bias="0.859"
-        tools:visibility="invisible" />
 
     <Button
         android:id="@+id/backMainMenu"
         android:layout_width="150dp"
         android:layout_height="55dp"
-        android:layout_marginBottom="64dp"
-        android:text="@string/menu"
-        android:textColor="#311B92"
+        android:layout_marginBottom="52dp"
+        android:text="MENU"
         app:icon="@android:drawable/ic_menu_revert"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/deleteRow"
-        app:layout_constraintHorizontal_bias="0.225"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="TextContrastCheck" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.061"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TableLayout
         android:id="@+id/layT"
-        android:layout_width="407dp"
-        android:layout_height="473dp"
+        android:layout_width="406dp"
+        android:layout_height="425dp"
         android:layout_marginBottom="31dp"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
         app:layout_constraintBottom_toTopOf="@+id/backMainMenu"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.301">
+        app:layout_constraintVertical_bias="0.6">
 
         <TextView
             android:id="@+id/layout"
@@ -75,7 +60,6 @@
                 android:clickable="false"
                 android:text="ID"
                 android:textAlignment="center"
-                android:textColor="#4A148C"
                 tools:ignore="HardcodedText" />
 
             <TextView
@@ -86,7 +70,6 @@
                 android:clickable="false"
                 android:text="DATA"
                 android:textAlignment="center"
-                android:textColor="#4A148C"
                 tools:ignore="HardcodedText" />
 
             <TextView
@@ -96,7 +79,6 @@
                 android:layout_weight="1"
                 android:text="Waga"
                 android:textAlignment="center"
-                android:textColor="#4A148C"
                 tools:ignore="HardcodedText" />
 
             <TextView
@@ -106,7 +88,6 @@
                 android:layout_weight="1"
                 android:text="Wzrost"
                 android:textAlignment="center"
-                android:textColor="#4A148C"
                 tools:ignore="HardcodedText" />
 
             <TextView
@@ -116,7 +97,6 @@
                 android:layout_weight="1"
                 android:text="BMI"
                 android:textAlignment="center"
-                android:textColor="#4A148C"
                 tools:ignore="HardcodedText" />
 
             <TextView
@@ -126,26 +106,34 @@
                 android:layout_weight="1"
                 android:text="Info"
                 android:textAlignment="center"
-                android:textColor="#4A148C"
                 tools:ignore="HardcodedText" />
         </TableRow>
 
     </TableLayout>
 
     <Button
+        android:id="@+id/graph"
+        android:layout_width="150dp"
+        android:layout_height="55dp"
+        android:text="WYKRES"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layT"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
         android:id="@+id/deleteRow"
         android:layout_width="150dp"
         android:layout_height="55dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="40dp"
-        android:text="@string/usu_wiersz"
-        android:textColor="#311B92"
-        app:icon="@android:drawable/ic_input_delete"
-        app:layout_constraintBottom_toTopOf="@+id/graph"
+        android:layout_marginTop="48dp"
+        android:text="Usuń wiersz"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.938"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/layT"
-        app:layout_constraintVertical_bias="1.0"
-        tools:ignore="TextContrastCheck" />
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

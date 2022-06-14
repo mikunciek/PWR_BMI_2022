@@ -1,20 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/graph"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
     tools:context=".GraphResult">
 
-    a    <com.androidplot.xy.XYPlot
-    android:id="@+id/plot"
-    style="@style/APDefacto.Light"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    app:title="Twoja waga"
-    app:rangeTitle="Waga"
-    app:domainTitle="Data"
-    />
+    <com.androidplot.xy.XYPlot
+        android:id="@+id/plot"
+        style="@style/APDefacto.Light"
+        android:layout_width="match_parent"
+        android:layout_height="532dp"
+        android:textAlignment="center"
+        app:domainTitle="Data"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:rangeTitle="Waga"
+        app:title="Twoja waga"
+        tools:layout_editor_absoluteX="36dp" />
+
+    <Button
+        android:id="@+id/backMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/menuBack"
+        android:textColor="#311B92"
+        app:icon="@android:drawable/ic_menu_revert"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="TextContrastCheck" />"
 
 </LinearLayout>

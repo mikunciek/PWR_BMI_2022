@@ -15,6 +15,7 @@ class DaysChallenge : AppCompatActivity() {
         setContentView(R.layout.activity_days_challenge)
 
         val webView: WebView = findViewById(R.id.panel)
+        val url = "https://github.com/mikunciek/PWR_BMI_2022/raw/master/pdf/Wyzwanie%2030%20dni.pdf"
 
         webView.settings.javaScriptEnabled = true
         webView.settings.setSupportZoom(true)
@@ -22,10 +23,7 @@ class DaysChallenge : AppCompatActivity() {
         webView.canGoBack()
         webView.canGoForward()
         webView.requestFocus()
-        val url =
-            "https://github.com/mikunciek/PWR_BMI_2022/raw/master/pdf/Wyzwanie%2030%20dni.pdf"
         webView.loadUrl("https://docs.google.com/gview?embedded=true&url=$url")
-
 
         backMainMenu.setOnClickListener {
             this.startActivity(Intent(this, MainActivity::class.java))

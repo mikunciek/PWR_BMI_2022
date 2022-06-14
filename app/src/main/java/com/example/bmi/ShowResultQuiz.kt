@@ -2,8 +2,8 @@ package com.example.bmi
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_show_result_quiz.*
 
 
@@ -13,10 +13,7 @@ class ShowResultQuiz : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_show_result_quiz)
 
-
         val point = this.intent.getStringExtra("Punkty")
-
-
         layoutResoult.text = "Twój wynik:  $point"
 
         backMenu.setOnClickListener {

@@ -20,67 +20,56 @@ class CalculateBMI : AppCompatActivity() {
 
         setContentView(R.layout.activity_calculate_bmi)
 
-        //deklaracja stanów początkowych
+        //initial states
         quizOpen.visibility = View.INVISIBLE
         val sdfTmp = SimpleDateFormat("dd.MM.yyyy", Locale.GERMANY)
         showDate.text = sdfTmp.format(Date())
 
-
-
-        ShowDialog.setOnClickListener { //wybór daty
+        ShowDialog.setOnClickListener {
             viewDatePicker()
         }
 
         save.setOnClickListener {
-            //obsługa błędów, żeby pole nie było puste - wczesne zwrócenie
-            if(editWeightNumber.text.isNullOrBlank() || editHeightNumber.text.isNullOrBlank()){
-
-               if(editWeightNumber.text.isNullOrBlank()){
-                   weightContainer.error = "Wymagane*"
-               }
-
-                if(editHeightNumber.text.isNullOrBlank()){
-                    heightContainer.error ="Wymagane*"
+            //error handling - the field cannot empty - early return
+            if (editWeightNumber.text.isNullOrBlank() || editHeightNumber.text.isNullOrBlank()) {
+                if (editWeightNumber.text.isNullOrBlank()) {
+                    weightContainer.error = "Wymagane*"
+                }
+                if (editHeightNumber.text.isNullOrBlank()) {
+                    heightContainer.error = "Wymagane*"
                 }
                 return@setOnClickListener
             }
-
+            //appears when the field is not empty
             weightContainer.helperText = "Podaj wagę"
             heightContainer.helperText = "Podaj wzrost"
 
+            val date = showDate
+            val weight = editWeightNumber.text.toString().toDouble()
+            val height = editHeightNumber.text.toString().toDouble()
+            val bmi = BMI(weight, height, date.text.toString())
 
-            val date = showDate   //data
-            val weight = editWeightNumber.text.toString().toDouble()    //waga
-            val height = editHeightNumber.text.toString().toDouble()   //wzrost
-
-
-            val bmi = BMI(weight, height, date.text.toString())    //obliczenie bmi
             bmiValue.text = "Twoje BMI wynosi: " + "%.2f".format(bmi.calculateBMI())
-
-            val info = bmi.toString()   //info o bmi
+            val info = bmi.toString()
             viewInfoBMI.text = "Twój wynik: $info"
 
-            val dataBase = DatabaseHandler(this)    //dodanie do bazy danych
-            //dataBase.clear()
+            val dataBase = DatabaseHandler(this)
             dataBase.addBMI(bmi)
             Toast.makeText(this, "BMI dodane", Toast.LENGTH_SHORT).show()
 
-            quizOpen.visibility = View.VISIBLE //wyświetlenie ukrytej akcji - zrób quiz
-
-
+            quizOpen.visibility = View.VISIBLE //display a hidden action - take a quiz
             quizOpen.setOnClickListener {
                 this.startActivity(Intent(this, QuizLife::class.java))
             }
         }
 
-        backMainMenu.setOnClickListener { //powrót do menu
+        backMainMenu.setOnClickListener {
             this.startActivity(Intent(this, MainActivity::class.java))
         }
 
-        backViewResolut.setOnClickListener { //zobacz poprzednie wyniki
+        backViewResolut.setOnClickListener {
             this.startActivity(Intent(this, PreviousTable::class.java))
         }
-
     }
 
     private fun viewDatePicker() {
@@ -89,18 +78,11 @@ class CalculateBMI : AppCompatActivity() {
         val month = c.get(Calendar.MONTH)
         val day = c.get(Calendar.DAY_OF_MONTH)
 
-        val datePicker = DatePickerDialog(   //okno kalendarza
-            this,
-            { _, year, month, dayOfMonth ->
+        val datePicker = DatePickerDialog(this,{ _, year, month, dayOfMonth ->
                 val sdfChange = SimpleDateFormat("dd.MM.yyyy", Locale.GERMANY)
                 c.set(year, month, dayOfMonth)
                 showDate.text = sdfChange.format(c.time)
-            }, year, month, day
-        )
+            }, year, month, day)
         datePicker.show()
     }
 }
-
-
-
-

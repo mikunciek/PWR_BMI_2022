@@ -1,16 +1,13 @@
 package com.example.bmi
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_quiz.*
-import kotlinx.android.synthetic.main.activity_quiz.backMainMenu
 
 @Suppress("ClassName")
 class QuizLife : AppCompatActivity() {
-
-
-    private val questions = QuizList(
+    private val questions = QuizList( //list of questions
         listOf(
             Question(
                 "Które produkty powinny stanowić podstawę naszej diety?",
@@ -131,8 +128,6 @@ class QuizLife : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz)
-
-
         var answers = loadQuestion()
 
         if (answers === null) {
@@ -143,30 +138,26 @@ class QuizLife : AppCompatActivity() {
             val selId = answersGroup.indexOfChild(
                 findViewById(answersGroup.checkedRadioButtonId)
             )
-
             this.questions.addPoint(answers!![selId])
 
             answers = loadQuestion()
-            if (answers === null) { //koniec listy pytań
-
+            if (answers === null) { //end list of questions
                 val point = this.questions.points.toString()
                 showPoint.text = point
                 ok.text = "Zobacz wyniki"
 
-                //return point
+                //return point and send next activity
                 val intent = Intent(this@QuizLife,ShowResultQuiz::class.java).apply{
                     putExtra("Punkty",point)
                 }
                 startActivity(intent)
 
-
                 ok.setOnClickListener {
                     this.startActivity(Intent(this, ShowResultQuiz::class.java))
                 }
-
             }
         }
-        //akcje powrotu
+
         backMainMenu.setOnClickListener {
             this.startActivity(Intent(this, MainActivity::class.java))
         }
@@ -178,10 +169,10 @@ class QuizLife : AppCompatActivity() {
         if (quest === null) {
             return null
         }
-
         questionText.text = quest.questionText
 
         val answers = quest.answers.shuffled()
+
         aButton.text = answers[0].answerText
         bButton.text = answers[1].answerText
         cButton.text = answers[2].answerText
@@ -189,4 +180,3 @@ class QuizLife : AppCompatActivity() {
         return answers
     }
 }
-
