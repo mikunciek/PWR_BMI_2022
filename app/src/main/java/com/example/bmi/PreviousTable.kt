@@ -11,8 +11,6 @@ import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_calculate_bmi.backMainMenu
 import kotlinx.android.synthetic.main.activity_previous_table.*
 
-//i in 0..idList.size-1 - indicies zwraca zakres indeksu od pierwszej do ostatniej pozycji
-
 class PreviousTable : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +31,7 @@ class PreviousTable : AppCompatActivity() {
         }
     }
 
+
     @SuppressLint("SetTextI18n")
     private fun updateTable() {
         val db = DatabaseHandler(this)
@@ -41,13 +40,9 @@ class PreviousTable : AppCompatActivity() {
         //make sure that the lists contain data or else display will be blank screen
         val params1 = TableRow.LayoutParams(
             TableRow.LayoutParams.WRAP_CONTENT,
-            TableRow.LayoutParams.WRAP_CONTENT, 0.05f
-        )
+            TableRow.LayoutParams.WRAP_CONTENT, 0.05f)
 
         val tbl = findViewById<TableLayout>(R.id.layT)
-        //tbl.removeViewsInLayout(0, tbl.childCount) //we clean the "old" table and give the current data
-        //tbl.removeViewAt(1) //we clean the "old" table and give the current data
-
         tbl.removeAllViews()
 
         var i = 1
@@ -70,23 +65,15 @@ class PreviousTable : AppCompatActivity() {
             bmiText.text = "%.2f".format(bmi.calculateBMI())
             infoText.text = bmi.toString()
 
-            //style
-            row.layoutParams = params1
-            idText.layoutParams = params1
-            dateText.layoutParams = params1
-            weightText.layoutParams = params1
-            heightText.layoutParams = params1
-            bmiText.layoutParams = params1
-            infoText.layoutParams = params1
 
-            //the textviews have to be added to the row created
-            row.addView(idText)
-            row.addView(dateText)
-            row.addView(weightText)
-            row.addView(heightText)
-            row.addView(bmiText)
-            row.addView(infoText)
-            tbl.addView(row)
+            //the textviews have to be added to the row created with style
+            row.addView(idText,params1)
+            row.addView(dateText, params1)
+            row.addView(weightText,params1)
+            row.addView(heightText,params1)
+            row.addView(bmiText,params1)
+            row.addView(infoText,params1)
+            tbl.addView(row,params1)
 
             i++
         }
@@ -100,5 +87,41 @@ class PreviousTable : AppCompatActivity() {
             graph.visibility = View.INVISIBLE
         }
     }
+
+
+    private fun baseTable(){
+
+        val params1 = TableRow.LayoutParams(
+            TableRow.LayoutParams.WRAP_CONTENT,
+            TableRow.LayoutParams.WRAP_CONTENT, 0.05f
+        )
+
+        val row = TableRow(this)
+        val idText = TextView(this)
+        val dateText = TextView(this)
+        val weightText = TextView(this)
+        val heightText = TextView(this)
+        val bmiText = TextView(this)
+        val infoText = TextView(this)
+
+        //setting the text
+        idText.text = "ID"
+        dateText.text = "DATE"
+        weightText.text = "WAGA"
+        heightText.text = "WZROST"
+        bmiText.text = "BMI"
+        infoText.text = "INFO"
+
+        //the textviews have to be added to the row created with style
+        row.addView(idText,params1)
+        row.addView(dateText, params1)
+        row.addView(weightText,params1)
+        row.addView(heightText,params1)
+        row.addView(bmiText,params1)
+        row.addView(infoText,params1)
+    }
+
+
 }
+
 

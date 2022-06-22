@@ -43,7 +43,7 @@ class DatabaseHandler(context: Context?) :
         onCreate(db)
     }
 
-    // code to add the new value - dodaje nowy wiersz do bazy
+    // code to add the new value
     fun addBMI(bmi: BMI) {
         val db = this.writableDatabase
         val values = ContentValues()
