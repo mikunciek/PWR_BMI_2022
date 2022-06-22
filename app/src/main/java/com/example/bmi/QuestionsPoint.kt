@@ -1,6 +1,6 @@
 package com.example.bmi
 
-class QuizList(
+class QuestionsPoint(
     private val questions: List<Question>
 ) {
     private var counter: Int = 0

@@ -18,7 +18,7 @@ class NewNutrion : AppCompatActivity() {
 
         webView.settings.javaScriptEnabled = true
         webView.settings.setSupportZoom(true)
-        webView.isVerticalScrollBarEnabled = true; //przewijanie w pionie
+        webView.isVerticalScrollBarEnabled = true
         webView.canGoBack()
         webView.canGoForward()
         webView.requestFocus()

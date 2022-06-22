@@ -7,7 +7,7 @@ import kotlinx.android.synthetic.main.activity_quiz.*
 
 @Suppress("ClassName")
 class QuizLife : AppCompatActivity() {
-    private val questions = QuizList( //list of questions
+    private val questions = QuestionsPoint( //list of questions
         listOf(
             Question(
                 "Które produkty powinny stanowić podstawę naszej diety?",

@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_calculate_bmi.backMainMenu
 import kotlinx.android.synthetic.main.activity_previous_table.*
+
 //i in 0..idList.size-1 - indicies zwraca zakres indeksu od pierwszej do ostatniej pozycji
 
 class PreviousTable : AppCompatActivity() {
@@ -40,16 +41,16 @@ class PreviousTable : AppCompatActivity() {
         //make sure that the lists contain data or else display will be blank screen
         val params1 = TableRow.LayoutParams(
             TableRow.LayoutParams.WRAP_CONTENT,
-            TableRow.LayoutParams.WRAP_CONTENT, 1.0f)
-
-        val params2 = TableRow.LayoutParams(
-            TableRow.LayoutParams.FILL_PARENT,
-            TableRow.LayoutParams.WRAP_CONTENT)
+            TableRow.LayoutParams.WRAP_CONTENT, 0.05f
+        )
 
         val tbl = findViewById<TableLayout>(R.id.layT)
-        tbl.removeViews(0, tbl.childCount) //we clean the "old" table and give the current data
+        //tbl.removeViewsInLayout(0, tbl.childCount) //we clean the "old" table and give the current data
+        //tbl.removeViewAt(1) //we clean the "old" table and give the current data
 
-        var i: Int = 1
+        tbl.removeAllViews()
+
+        var i = 1
         for (bmi in list) {
 
             //Creating new tablerows and textviews
@@ -63,14 +64,14 @@ class PreviousTable : AppCompatActivity() {
 
             //setting the text
             idText.text = i.toString()
-            dateText.text = bmi.date.toString()
+            dateText.text = bmi.date
             weightText.text = bmi.weight.toString()
             heightText.text = bmi.height.toString()
             bmiText.text = "%.2f".format(bmi.calculateBMI())
             infoText.text = bmi.toString()
 
             //style
-            row.layoutParams = params2
+            row.layoutParams = params1
             idText.layoutParams = params1
             dateText.layoutParams = params1
             weightText.layoutParams = params1
@@ -100,3 +101,4 @@ class PreviousTable : AppCompatActivity() {
         }
     }
 }
+

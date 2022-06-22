@@ -8,8 +8,7 @@ class BMI(
     ) {
 
     fun calculateBMI(): Double {
-        val bmi = weight / ((height / 100.00) * (height / 100.00))
-        return bmi
+        return weight / ((height / 100.00) * (height / 100.00)) //bmi
     }
 
     override fun toString (): String {

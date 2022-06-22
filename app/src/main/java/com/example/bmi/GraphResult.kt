@@ -10,6 +10,8 @@ import java.text.DecimalFormat
 import java.text.FieldPosition
 import java.text.Format
 import java.text.ParsePosition
+import kotlin.math.roundToInt
+
 /*
         * filter, map, sort
         * map -> zmapować i zwrócić listę elementów po konkretnych zmianach
@@ -26,12 +28,12 @@ class GraphResult : AppCompatActivity() {
 
         val db = DatabaseHandler(this)
         val list = db.allData()
-        val domainLabels: List<String> = list.map {it.date;} //mapowanie
-        val series1Number =  list.map { it.weight };
+        val domainLabels: List<String> = list.map {it.date;} //mapping
+        val series1Number =  list.map { it.weight }
         val series1: XYSeries = SimpleXYSeries(series1Number, SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, "Waga")
         val series1Format = LineAndPointFormatter(Color.BLUE, Color.BLACK, null, null)
 
-        series1Format.interpolationParams = CatmullRomInterpolator.Params(10, CatmullRomInterpolator.Type.Centripetal)
+        series1Format.interpolationParams = CatmullRomInterpolator.Params(5, CatmullRomInterpolator.Type.Centripetal)
         series1Format.linePaint.strokeWidth = 10f
         series1Format.vertexPaint.strokeWidth = 30f
 
@@ -50,7 +52,7 @@ class GraphResult : AppCompatActivity() {
                 toAppendTo: StringBuffer,
                 pos: FieldPosition
             ): StringBuffer {
-                val i = Math.round((obj as Number).toFloat())
+                val i = (obj as Number).toFloat().roundToInt()
                 return toAppendTo.append(domainLabels[i])
             }
 

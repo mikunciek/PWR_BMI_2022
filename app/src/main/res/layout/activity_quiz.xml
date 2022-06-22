@@ -23,8 +23,10 @@
         android:id="@+id/questionText"
         android:layout_width="324dp"
         android:layout_height="99dp"
+        android:fontFamily="casual"
         android:text="Pytanie: "
         android:textAlignment="center"
+        android:textColor="#283593"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/answersGroup"
@@ -49,6 +51,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
+            android:fontFamily="casual"
+            android:textColor="#6A1B9A"
             android:textSize="20sp"
             tools:ignore="DuplicateSpeakableTextCheck" />
 
@@ -56,12 +60,16 @@
             android:id="@+id/bButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:textColor="#6A1B9A"
             android:textSize="20sp" />
 
         <RadioButton
             android:id="@+id/cButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="casual"
+            android:textColor="#6A1B9A"
             android:textSize="20sp" />
 
     </RadioGroup>

@@ -7,23 +7,11 @@
     tools:context=".PreviousTable">
 
 
-    <Button
-        android:id="@+id/backMainMenu"
-        android:layout_width="150dp"
-        android:layout_height="55dp"
-        android:layout_marginBottom="52dp"
-        android:text="MENU"
-        android:textColor="#311B92"
-        app:icon="@android:drawable/ic_menu_revert"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.061"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <TableLayout
         android:id="@+id/layT"
-        android:layout_width="423dp"
-        android:layout_height="235dp"
+        android:layout_width="402dp"
+        android:layout_height="245dp"
         android:layout_marginBottom="31dp"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
@@ -37,7 +25,7 @@
             android:id="@+id/layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/akaya_telivigala"
+            android:fontFamily="casual"
             android:text="Poprzednie wyniki BMI: "
             android:textAlignment="center"
             android:textColor="#455A64"
@@ -119,6 +107,19 @@
     </TableLayout>
 
     <Button
+        android:id="@+id/backMainMenu"
+        android:layout_width="150dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="52dp"
+        android:text="MENU"
+        android:textColor="#311B92"
+        app:icon="@android:drawable/ic_menu_revert"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.061"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
         android:id="@+id/graph"
         android:layout_width="150dp"
         android:layout_height="55dp"
@@ -148,10 +149,9 @@
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
         android:contentDescription="TODO"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/zrzut_ekranu_2022_06_14_222844" />

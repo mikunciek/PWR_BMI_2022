@@ -1,3 +1,5 @@
+@file:Suppress("NAME_SHADOWING")
+
 package com.example.bmi
 
 import android.annotation.SuppressLint
@@ -17,7 +19,6 @@ class CalculateBMI : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.activity_calculate_bmi)
 
         //initial states
@@ -29,8 +30,7 @@ class CalculateBMI : AppCompatActivity() {
             viewDatePicker()
         }
 
-        save.setOnClickListener {
-            //error handling - the field cannot empty - early return
+        save.setOnClickListener { //error handling - the field cannot empty - early return
             if (editWeightNumber.text.isNullOrBlank() || editHeightNumber.text.isNullOrBlank()) {
                 if (editWeightNumber.text.isNullOrBlank()) {
                     weightContainer.error = "Wymagane*"
@@ -73,15 +73,15 @@ class CalculateBMI : AppCompatActivity() {
     }
 
     private fun viewDatePicker() {
-        val c = Calendar.getInstance()
-        val year = c.get(Calendar.YEAR)
-        val month = c.get(Calendar.MONTH)
-        val day = c.get(Calendar.DAY_OF_MONTH)
+        val cal = Calendar.getInstance()
+        val year = cal.get(Calendar.YEAR)
+        val month = cal.get(Calendar.MONTH)
+        val day = cal.get(Calendar.DAY_OF_MONTH)
 
         val datePicker = DatePickerDialog(this,{ _, year, month, dayOfMonth ->
                 val sdfChange = SimpleDateFormat("dd.MM.yyyy", Locale.GERMANY)
-                c.set(year, month, dayOfMonth)
-                showDate.text = sdfChange.format(c.time)
+                cal.set(year, month, dayOfMonth)
+                showDate.text = sdfChange.format(cal.time)
             }, year, month, day)
         datePicker.show()
     }

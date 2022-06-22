@@ -21,16 +21,16 @@ class DatabaseHandler(context: Context?) :
     //$key - by ułatwić pracę w zapytaniach, drukowane - typy danych
     // Creating Tables
     override fun onCreate(db: SQLiteDatabase) {
-        val CREATE_TABLE_BMI_STATS =
+        val createTableBMIStatistic =
             ("CREATE TABLE $TABLE_BMI_STATS  (id INTEGER PRIMARY KEY AUTOINCREMENT," +
                     " $KEY_DATE DATE, $KEY_WEIGHT DOUBLE, $KEY_HEIGHT DOUBLE)")
-        db.execSQL(CREATE_TABLE_BMI_STATS)
+        db.execSQL(createTableBMIStatistic)
     }
 
     // Upgrading database - zmiany między wersjami, czysta baza
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
         // Drop older table if existed
-        db.execSQL("DROP TABLE IF EXISTS $TABLE_BMI_STATS ")
+        db.execSQL("DROP TABLE IF EXISTS $TABLE_BMI_STATS")
         // Create tables again
         onCreate(db)
     }
@@ -38,7 +38,7 @@ class DatabaseHandler(context: Context?) :
     //clear base
     fun clear() {
         val db = this.writableDatabase
-        db.execSQL("DROP TABLE IF EXISTS $TABLE_BMI_STATS ")
+        db.execSQL("DROP TABLE IF EXISTS $TABLE_BMI_STATS")
         // Create tables again
         onCreate(db)
     }
@@ -48,7 +48,7 @@ class DatabaseHandler(context: Context?) :
         val db = this.writableDatabase
         val values = ContentValues()
 
-        values.put(KEY_DATE, bmi.date.toString())
+        values.put(KEY_DATE, bmi.date)
         values.put(KEY_WEIGHT, bmi.weight)
         values.put(KEY_HEIGHT, bmi.height)
 
@@ -56,14 +56,13 @@ class DatabaseHandler(context: Context?) :
             TABLE_BMI_STATS,
             null,
             values
-        )  // Inserting Row - utworzenie nowego wiersza w tabeli
+        )  // Inserting Row - creates new row in table
         db.close() // Closing database connection
     }
 
     @SuppressLint("Range", "Recycle")
-    fun allData(): List<BMI> { //tworzy listę obiektów bmi
-        // select - wybiera wszystko co jest w bazie wg określonych kryteriów
-        //* - oznacza dowolny ciąg znaków, tutaj wyciąga wszystkie kolumny
+    fun allData(): List<BMI> { //creates a list of objects
+        //* - stands for any string, extracts all columns here
 
         val date: MutableList<BMI> = ArrayList()
         val selectQuery = "SELECT * FROM $TABLE_BMI_STATS"
@@ -88,7 +87,7 @@ class DatabaseHandler(context: Context?) :
     fun delLastItem() { //delete last element of list
         val selectQuery = "SELECT id FROM $TABLE_BMI_STATS ORDER BY id DESC LIMIT 1"
         var db = this.readableDatabase
-        var id: String? = null;
+        var id: String? = null
         val cursor = db.rawQuery(selectQuery, null)
 
         if (cursor.moveToFirst()) {
@@ -101,6 +100,6 @@ class DatabaseHandler(context: Context?) :
 
         db = this.writableDatabase
         db.delete(TABLE_BMI_STATS, "id=?", arrayOf(id))
-        db.close() //zamyka połaczenie
+        db.close() //closes the connection
     }
 }

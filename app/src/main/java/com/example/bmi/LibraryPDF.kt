@@ -30,7 +30,7 @@ class LibraryPDF : AppCompatActivity() {
         memory.setOnClickListener {
             this.startActivity(Intent(this, MemoryGood::class.java))
         }
-        //akcje powrotu
+
         backMainMenu.setOnClickListener {
             this.startActivity(Intent(this, MainActivity::class.java))
         }
